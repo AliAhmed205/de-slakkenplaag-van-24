@@ -195,7 +195,7 @@ main {
   position: absolute;
   top: -9px;
   z-index: 0;
-  background-image: url('/IMG/regen.gif');
+  background-image: url('./IMG/regen.gif');
   opacity: .5;
   background-size: contain;
   mix-blend-mode: soft-light;
