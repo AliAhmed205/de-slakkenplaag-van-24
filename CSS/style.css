@@ -1,0 +1,694 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Handlee&family=Indie+Flower&display=swap');
+
+*,
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --sp-black: black;
+  --sp-white: whitesmoke;
+  --p-color: #ffed9f;
+  --slak-blauw: #132b52;
+  --script-font: "Indie Flower", cursive;
+  --title-color: #beff6f;
+  --regular-p: "Montserrat", sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+
+header {
+  position: absolute;
+  top: 0;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+p, li {
+  color: white;
+  font-family: var(--regular-p);
+}
+
+li {
+  text-align: left;
+}
+
+header h1 {
+  background-color: var(--sp-black);
+  width: 100vw;
+  text-align: center;
+  padding: .6rem;
+  color: var(--sp-white);
+  font-weight: 500;
+  font-size: .7rem;
+  font-family: var(--regular-p);
+  z-index: 1;
+  /* border-bottom: solid .2px white; */
+}
+
+main {
+  position: relative;
+}
+
+/* Homepage Styling */
+
+.homepage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  }
+
+.homepage .background-container {
+  background: linear-gradient(  var(--slak-blauw)  0%, var(--sp-black)  100%);
+  /* background: linear-gradient(  rgba(0,0,0,1)  0%, rgb(19, 43, 82) 50%, rgba(0,0,0,1)  100%); */
+  /* background: radial-gradient(circle,  rgb(29, 42, 13)   0%, rgba(0,0,0,1)  60%); */
+
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -2;
+
+}
+
+.homepage h2 {
+  position: relative;
+  z-index: 99;
+  color: var(--title-color);
+  font-size: 10rem;
+  user-select: none;
+  font-family: var(--script-font);
+  text-shadow: var(--title-color) 0 0 20px;
+  animation: fadeIn 1s 2s backwards, float 6s ease-in-out infinite;
+}
+
+
+.homepage h1 {
+  color: var(--p-color);
+  font-family: var(--script-font);
+  font-size: 3rem;
+  margin-bottom: -2rem;
+  user-select: none;
+  text-shadow: var(--p-color) 0 0 5px;
+  animation: fadeIn 1s .5s backwards;
+}
+
+.homepage p {
+  color: var(--sp-white);
+  font-family: var(--regular-p);
+  width: 50%;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 2rem;
+  text-align: center;
+  margin: -2.5rem 0 2rem 0;
+  animation: fadeIn 1s 3s backwards;
+}
+
+
+
+.homepage a {
+  display: flex;
+  position: relative;
+  align-items: center;
+  color: var(--sp-black);
+  box-shadow: #beff6f 0 0 20px;
+  text-decoration: none;
+  font-family: var(--regular-p);
+  font-weight: 600;
+  gap: .5rem;
+  background-color: var(--title-color);
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  transition: .2s ease-in-out;
+  animation: fadeIn .5s 3.5s backwards;
+  z-index: 2;
+}
+
+.homepage a:hover {
+  background-color: #21340a;
+  color: var(--sp-white);
+  scale: 1.2;
+}
+
+.homepage a:focus {
+  background-color: #497d09;
+  color: var(--sp-white);
+  scale: 1.2;
+}
+
+.homepage .plant-corner {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  filter: brightness(.5); 
+}
+
+.homepage .plant-corner .blad {
+  position: absolute;
+  width: 20%;
+  user-select: none;
+  animation: tilt-n-move-shaking 10s infinite;
+}
+
+.homepage .plant-corner .blad:nth-of-type(1) {
+  left: -2.5rem;
+  rotate: 120deg;
+}
+
+.homepage .plant-corner .blad:nth-of-type(2) {
+  right: -2.5rem;
+  rotate: 260deg;
+}
+
+.homepage .plant-corner .blad:nth-of-type(3) {
+  bottom: 0;
+  left: -4rem;;
+  rotate: 40deg;
+}
+
+.homepage .plant-corner .blad:nth-of-type(4) {
+  bottom: -2rem;
+  right: -2rem;
+  rotate: -30deg;
+}
+
+.rain-background {
+  width: 100vw;
+  height: 101vh;
+  position: absolute;
+  top: -9px;
+  z-index: 0;
+  background-image: url('/IMG/regen.gif');
+  opacity: .5;
+  background-size: contain;
+  mix-blend-mode: soft-light;
+}
+
+.homepage div {
+  width: 3em;
+  position: absolute;
+  left: calc(10% + 80% * var(--x) - 1em);
+  top: -4em;
+
+
+  animation: slak calc(5s + 1s * var(--dur)) calc(100s * var(--delay)) infinite ease-in;
+}
+
+.homepage div img {
+  width: 100%;
+}
+
+/* Questioning container */
+.question-container {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  text-align: center;
+  position: relative; /* Houd de knoppen binnen de container */
+}
+
+.part-container {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: height 0.5s ease;
+  /* min-height: 50vh; */
+}
+
+iframe {
+  margin: 1.5rem 0;
+  border-radius: 20px;
+  box-shadow: #beff6f82 0 0 20px;
+}
+
+.question-container .part {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.part img {
+  width: 20%;
+  margin: 1rem 0;
+}
+
+.question-container .part h2 {
+  color: var(--title-color);
+  font-family: var(--script-font);
+  font-size: 3rem;
+  text-shadow: var(--title-color) 0 0 20px;
+}
+
+
+.question-container .part p {
+  margin: .5rem auto;
+  width: 60%;
+  font-size: 1.3rem;
+}
+
+.question-container .part p span {
+  font-weight: 800;
+}
+
+.question-container .button-container {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.question-container .button-container button {
+  aspect-ratio: 1/1;
+  width: 4rem;
+  background-color: var(--title-color);
+  color: black;
+  border-radius: 100px;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.question-container .button-container button:hover {
+  background-color: #fff; /* Voeg een hover effect toe */
+}
+
+.question-container .part.reveal {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.question-container .part.hide {
+  opacity: 0;
+  transform: translateX(30px);
+  pointer-events: none; /* Voorkomt dat het onzichtbare element kliks blokkeert */
+}
+
+.question-container .part ul {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.question-container .part ul li {
+  list-style-type: none;
+  padding: 1rem;
+  aspect-ratio: 1/1;
+  width: 15rem;
+  background-color: var(--p-color);
+  color: black;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+}
+
+.slakkie {
+  position: absolute;
+  bottom: -2vh;
+  left: -26vw;
+  animation: movingSnail 60s .5s infinite ease-in-out;
+}
+
+/* Social Media Section */
+
+
+.social-media {
+  width: 100vw;
+  background: linear-gradient( rgb(0, 0, 0) 0%, green 100% );
+  color: white;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.social-media h2 {
+  color: var(--title-color);
+  text-align: center;
+  font-family: var(--script-font);
+  font-size: 3rem;
+}
+
+.social-media h3 {
+  font-family: var(--regular-p);
+}
+
+.social-media p {
+  width: 50%;
+  text-align: center;
+}
+
+.social-media div {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100vw;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  padding: 1rem;
+  animation: scroll 40s alternate-reverse infinite; 
+}
+
+.social-media a {
+  transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.social-media a:hover img,
+.social-media a:focus img {
+  box-shadow: var(--p-color) 0 0 10px;
+  scale: 1.1;
+}
+
+.social-media a:focus-visible {
+  outline: none;
+}
+
+.social-media > a{
+  font-family: var(--regular-p);
+  margin: 1rem 0;
+  color: var(--title-color);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem;
+  box-shadow: black 0 0 20px;
+  background-color: black;
+  border-radius: 3rem;
+  transition: .2s;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+
+.social-media > a:hover,
+.social-media > a:focus {
+  color: var(--p-color);
+}
+
+
+.social-media div img {
+  width: 18vw;
+  object-fit: cover;
+  object-position: left;
+}
+
+.social-media div img {
+  border-radius: 10px;
+  transition: .5s;
+}
+
+.social-media h3 {
+  color: var(--p-color);
+  font-family: var(--regular-p);
+}
+
+.social-media ul {
+  text-align: center;
+  margin-top: .5rem;
+  gap: 2rem;
+}
+
+.social-media strong {
+  color: var(--p-color);
+}
+
+/**********************/
+/* Constateren sectie */
+/**********************/
+
+.constateren-1 {
+  padding: 2rem;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient( #008000 0%, #000000 40% );
+}
+
+.constateren-1 #myPieChart {
+  max-width: 500px;   
+  max-height: 500px;  
+  position: relative;
+  z-index: 99;
+  margin: auto 0;
+}
+
+.constateren-1 h2 {
+  color: var(--title-color);
+  font-family: var(--script-font);
+  font-size: 2rem;
+  width: 50%;
+  text-align: center;
+  line-height: 2rem;
+  text-shadow: var(--title-color) 0 0 10px;
+}
+
+.constateren-1 p {
+  margin: 1rem 0;
+  width: 50%;
+  text-align: center;
+}
+
+.constateren-1 p:last-of-type {
+  margin: 0;
+}
+
+.constateren-1 > a:last-of-type {
+  padding: 1rem 2rem;
+  background-color: #beff6f;
+  color: black;
+  font-family: var(--regular-p);
+  text-decoration: none;
+  border-radius: 100px;
+  font-weight: 500;
+  box-shadow: var(--title-color) 0 0 20px;
+}
+
+/* Question */
+
+.question-container-2 {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question-container-2  h2 {
+  color: var(--title-color);
+  text-shadow: var(--title-color) 0 0 5px;
+  font-family: var(--script-font);
+  font-size: 2rem;
+}
+.question-container-2  h3 {
+  color: var(--title-color);
+  text-shadow: var(--title-color) 0 0 5px;
+  font-family: var(--script-font);
+  font-size: 3rem;
+}
+
+.question-container-2 ul li {
+  text-align: center;
+  list-style-type: none;
+}
+
+.question-container-2 button {
+  padding: 1rem 2rem;
+  background-color: red;
+  box-shadow: rgb(255, 89, 89) 0 0 20px;
+  border: none;
+  margin: .5rem 0;
+  color: white;
+  font-size: 1.3rem;
+  border-radius: 200px;
+  transition: .5s;
+}
+
+.question-container-2 button:hover,
+.question-container-2 button:focus {
+  background-color: white;
+  color: red;
+}
+
+.reveal-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reveal-2 {
+  opacity: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.reveal-1.hide {
+  animation: hideItems .5s .5s forwards
+}
+
+.evil-background {
+  background: linear-gradient(black 0%, red 100%);
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+}
+
+.evil-background.reveal {
+  animation: fadeIn 1s 2s forwards;
+  z-index: 1;
+}
+
+.reveal-2.reveal {
+  animation: fadeIn 1s 3s forwards;
+  z-index: 2;
+  position: relative;
+  text-align: center;
+}
+
+.reveal-2 h2 {
+  font-size: 6rem;
+}
+
+.reveal-2.reveal h2 {
+  color: red;
+  text-shadow: red 0 0 10px;
+}
+
+.reveal-2.reveal img {
+  width: 20rem;
+}
+
+/* Safari Sytling */
+.safari-browser .homepage h1 {
+  text-shadow: #ffed9f81 0 0 10px;
+}
+
+/* Animation */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hideItems {
+  to {
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+
+  50% {
+    transform: translatey(-10px);
+  }
+
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@keyframes tilt-n-move-shaking {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(5px, 5px) rotate(5deg);
+  }
+
+  50% {
+    transform: translate(0, 0) rotate(0eg);
+  }
+
+  75% {
+    transform: translate(-5px, 5px) rotate(-5deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes movingSnail {
+  to {
+    left: 105vw;
+  }
+}
+
+
+@keyframes slak {
+  to {
+    translate: 0 calc(100vh + 2em);
+    rotate: 4turn;
+  }
+}
+
+
+
+/* @keyframes scroll {
+  0% {
+    transform: translateX(-127%); 
+  }
+  100% {
+    transform: translateX(0%); 
+  }
+} */
+
+input {
+  background-color: rgb(255, 255, 0, .5);
+}

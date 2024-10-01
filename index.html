@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datavisualisatie 24-25</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐌</text></svg>">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <script src="https://kit.fontawesome.com/a6e62f9472.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js">
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>Ali Ahmed | Datavisualisatie 24-25 | Information Design</h1>
+  </header>
+  <main>
+    <section id="homepage" class="homepage">
+      <h1>De 'slakkenplaag' van 2024</h1>
+      <h2>Feit of Fabel?</h2>
+      <p>In de lente van 2024 klaagden veel mensen in Nederland over een
+        "slakkenplaag" door de plotselinge toename van
+        slakken in tuinen en op gewassen. Maar was het werkelijk een
+        plaag, of slechts een tijdelijk gevolg van het
+        natte weer?</p>
+      <a id="startBtn" href="#question"><i class="fa-solid fa-magnifying-glass"></i> Los het mysterie
+        op</a>
+      <div class="slug-container" style="--x:.67">
+        <img src="./IMG/slug.png" alt="slakken-regen" />
+      </div>
+      <section class="plant-corner">
+        <img class="blad" src="./IMG/leaves.png" alt="Bladeren">
+        <img class="blad" src="./IMG/leaves.png" alt="Bladeren">
+        <img class="blad" src="./IMG/leaves.png" alt="Bladeren">
+        <img class="blad" src="./IMG/leaves.png" alt="Bladeren">
+      </section>
+      <section class="rain-background"></section>
+      <section class="background-container"></section>
+    </section>
+    <section id="question" class="question-container">
+      <div class="part-container">
+        <div id="part-1" class="part reveal">
+          <h2>Hoe ben ik op het onderwerp gekomen?</h2>
+          <p>Het thema voor deze opdracht was <span>natuur</span>, dus
+            liep ik even naar buiten om wat inspiratie op te doen</p>
+        </div>
+        <div id="part-2" class="part hide">
+          <h2>Een slak</h2>
+          <p>Ik wandelde een beetje rond en ik vond naaktslak op straat. Voor ik het wist raakte ik overspoeld met
+            inspiratie. Wat voor data kan ik over slakken vinden? Zijn er eventuele recent gebeurtenissen relevant aan
+            slakken?</p>
+          <img src="./IMG/red-slug.svg" alt="slak">
+        </div>
+        <div id="part-3" class="part hide">
+          <h2>YouTube</h2>
+          <p>Ik googlede op verschillende termen wat betreft het type data dat ik kon verzamelen. Dit bracht me
+            vervolgens naar deze video. Zo begon ik meer over de 'plaag' te leren.
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/2pT3ffb_Um8?si=Vg8MvXeYtXuV4r9A"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </p>
+        </div>
+        <div id="part-4" class="part hide">
+          <h2>Observaties</h2>
+          <p>In het <b>Jeugdjournaal</b> verslag viel mij het volgende op:
+          </p>
+          <ul>
+            <li>• De verslaggeefster meldt dat door het <strong>natte weer en de warmte</strong> het aantal slakken
+              sterk is toegenomen.</li>
+            <li>• Wat mij opviel, is dat de kinderen vooral <strong>naaktslakken</strong> vonden.</li>
+            <li>• Dit vond plaats in een schooltuin in <strong>Amsterdam</strong>, toevallig bij mij in de buurt.</li>
+            <li>• Iedere <strong>ochtend</strong> haal de tuinman de slakken weg.</li>
+            <li>• Upload datum is <strong>24 mei 2024</strong> </li>
+          </ul>
+        </div>
+        <div id="part-5" class="part hide">
+          <h2>Social Media?</h2>
+          <p>Natuurlijk was het filmpje van het <b>jeugdjournaal</b> niet voldoende om gelijk te constateren dat er
+            <strong>een plaag</strong>
+            aan de hand was. Daarom ben ik gaan kijken in onder andere <strong>Instagram</strong> en
+            <strong>TikTok</strong></p>
+        </div>
+        <div id="part-6" class="part hide">
+          <h2>Social Media?</h2>
+          <p>Natuurlijk was het filmpje van het <b>jeugdjournaal</b> niet voldoende om gelijk te constateren dat er
+            <strong>een plaag</strong>
+            aan de hand was. Daarom ben ik gaan kijken in <strong>Instagram</strong></p>
+        </div>
+      </div>
+      <div class="button-container">
+        <button type="button" id="back" disabled><i class="fa-solid fa-arrow-left"></i></button>
+        <button type="button" id="forward"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+      <img class="slakkie" src="./IMG/slug-2.png" alt="slug-walking" aria-hidden="true">
+    </section>
+    <section id="social-media-container" class="social-media">
+      <h2>#slakkenplaag</h2>
+      <p>Op Instagram heb ik gezocht op de hashtag <strong>#slakkenplaag</strong> om te zien welke resultaten er
+        verschenen. De meeste posts gingen over de overlast die slakken veroorzaken, met name <strong>in de maand mei</strong>. Door op
+        een bericht te klikken, kun je meer details bekijken, zoals reacties, likes en andere informatie.</p>
+      <div>
+        <a href="#" target="_blank"><img src="./IMG/insta-posts/IMG_4252.jpg" alt=""></a>
+        <a href="#" target="_blank"><img src="./IMG/insta-posts/IMG_4253.jpg" alt=""></a>
+        <a href="#" target="_blank"><img src="./IMG/insta-posts/IMG_4254.jpg" alt=""></a>
+        <a href="#" target="_blank"><img src="./IMG/insta-posts/IMG_4255.jpg" alt=""></a>
+        <a href="#" target="_blank"><img src="./IMG/insta-posts/IMG_4256.jpg" alt=""></a>
+        <a href="#" target="_blank"><img src="./IMG/insta-posts/IMG_4257.jpg" alt=""></a>
+        <a href="#" target="_blank"><img src="./IMG/insta-posts/IMG_4258.jpg" alt=""></a>
+        <a href="#" target="_blank"><img src="./IMG/insta-posts/IMG_4259.jpg" alt=""></a>
+        <a href="#" target="_blank"><img src="./IMG/insta-posts/IMG_4260.jpg" alt=""></a>
+        <a href="#" target="_blank"><img src="./IMG/insta-posts/IMG_4261.jpg" alt=""></a>
+        <a href="#" target="_blank"><img src="./IMG/insta-posts/IMG_4263.jpg" alt=""></a>
+        <a href="https://www.instagram.com/p/C7VtXNIqqSj/" target="_blank"><img src="./IMG/insta-posts/IMG_4264.jpg" alt=""></a>
+        <a href="#" target="_blank"><img src="./IMG/insta-posts/IMG_4566.jpg" alt=""></a>
+        <a href="#" target="_blank"><img src="./IMG/insta-posts/IMG_4567.jpg" alt=""></a>
+      </div>
+      <a href="#pie-1"><i class="fa-solid fa-arrow-down"></i>Maar hoe zit het met de jaren ervoor?</a>
+    </section>
+    <section id="pie-1" class="constateren-1">
+      <h2>Wat is de verdeling van de 300 verzamelde posts met #slakkenplaag over de jaren 2022, 2023 en 2024?</h2>
+      <p>Ik heb 300 instagram posts verzameld om ze nu in stukken op te delen, en om te zien of er op basis van uploaddatum 
+        er inderdaad een verschil zit in het aantal slakkenplaag posts.</p>
+        <p><b>Zweef over de stukken om te weten wat het aantal van elk jaar is</b></p>
+      <canvas id="myPieChart"></canvas>
+      <a href="#">Aha! Laten we verder gaan</a>
+    </section>
+    <section class="question-container-2">
+      <div class="reveal-1"  id="container-2">
+      <h2>Wat weten we nu?</h2>
+      <ul>
+        <li>🐌 Uit de instagram berichten kunnen we speculeren dat er een <strong>vorm</strong> van een plaag was</li>
+        <li>🐌 Uit de instagram berichten kunnen we zien dat het gaat om naaktslakken...</li>
+      </ul>
+      <h3>Maar wat voor naaktslak?</h3>
+      <button type="button" id="start"><i class="fa-solid fa-skull"></i> Release the snail!</button>
+    </div>
+    <div class="evil-background" id="evil-bg">
+      <div class="reveal-2" id="container-3">
+        <h2>ARION VULGARIS</h2>
+        <p>De meest voorkomende naaktslak die voor de ellende zorgde in de lente.</p>
+        <img src="./IMG/arion-vulgaris.png" alt="Arion Vulgaris">
+      </div>
+    </div>
+    </section>
+  </main>
+  <footer></footer>
+  <script src="./JS/slakkenregen.js"></script>
+  <script src="./JS/part-transition.js"></script>
+  <script src="./JS/piechart.js"></script>
+  <script src="./JS/monstersnail.js"></script>
+</body>
+
+</html>
