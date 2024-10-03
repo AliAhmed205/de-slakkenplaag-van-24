@@ -451,6 +451,78 @@ html:has(.cls-4:hover) .cls-2, html:has(.cls-4:hover) .cls-3 {
   height: 30vw;
 }
 
+@media (max-width: 768px) {
+  
+  main > h1:first-of-type {
+    font-size: 0.5rem;
+  }
+  
+  .homepage h2 {
+    font-size: 4rem;
+  }
+  
+  .homepage h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  .homepage p {
+    font-size: 1rem;
+    width: 80%;
+    margin: 0;
+  }
+  
+  .homepage a {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .dashboard-container{
+    min-height: 100vh; /* Zorg dat de container minstens de hoogte van het scherm heeft */
+    height: auto; /* Laat de hoogte automatisch aanpassen */
+  }
+  
+  .dashboard {
+    overflow: inherit;
+    display: block;
+    padding: 1.5rem;
+  }
+
+  .dashboard-item {
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dashboard-item .item-2 {
+    height: 200px;
+  }
+
+  .dashboard-item h1, 
+  .dashboard-item h2, 
+  .dashboard-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .item-1 h1 {
+    font-size: 4rem;
+  }
+
+  .item-1 p {
+    font-size: 0.9rem;
+    width: 80%;
+  }
+
+  .item-2 h2 {
+    font-size: 1rem;
+  }
+
+  .item-3 h3 {
+    font-size: 1rem;
+  }
+}
+
+
 /* Animations */
 
 @keyframes fadeIn {

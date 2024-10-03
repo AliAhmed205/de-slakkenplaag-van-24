@@ -2,6 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const sections = document.querySelectorAll('section');
   const startBtn = document.getElementById('startBtn'); 
 
+  const isMobile = window.innerWidth < 768;
+  
+  const observerOptions = {
+    threshold: isMobile ? 0.2 : 0.5
+  };
+
+  // Maak de IntersectionObserver met juiste opties
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -21,10 +28,11 @@ document.addEventListener('DOMContentLoaded', function () {
           startCounter();
         }
 
+        // Stop met observeren van deze sectie omdat het al zichtbaar is
         observer.unobserve(visibleSection);
       }
     });
-  }, { threshold: 0.5 }); 
+  }, observerOptions);
 
   sections.forEach(section => {
     observer.observe(section);
@@ -44,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 10);
   }
 
+  // Functie om de slakken populatie animatie te starten
   function startSlakkenChartAnimation() {
     const slakkenChartCanvas = document.getElementById('slakkenPopulatieChart').getContext('2d');
     const jaren = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024];
@@ -115,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
     updateChartStepByStep();
   }
 
+  // Event listener voor de startknop
   startBtn.addEventListener('click', function (event) {
     event.preventDefault(); 
     const targetSection = document.querySelector('#question');
