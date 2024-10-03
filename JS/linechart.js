@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const sections = document.querySelectorAll('section');
-  const startBtn = document.getElementById('startBtn'); // Haal de startknop op
+  const startBtn = document.getElementById('startBtn'); 
 
-  // Observer voor de secties
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -22,18 +21,15 @@ document.addEventListener('DOMContentLoaded', function () {
           startCounter();
         }
 
-        // Stop observeren van deze sectie nadat animatie gestart is
         observer.unobserve(visibleSection);
       }
     });
-  }, { threshold: 0.5 }); // Trigger wanneer 50% van de sectie zichtbaar is
+  }, { threshold: 0.5 }); 
 
-  // Observing alle secties
   sections.forEach(section => {
     observer.observe(section);
   });
 
-  // Functie voor de telleranimatie
   function startCounter() {
     let count = 0;
     const counterElement = document.getElementById("counter");
@@ -48,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 10);
   }
 
-  // Functie om de Chart.js grafiek te initialiseren en animeren
   function startSlakkenChartAnimation() {
     const slakkenChartCanvas = document.getElementById('slakkenPopulatieChart').getContext('2d');
     const jaren = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024];
@@ -60,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         labels: jaren,
         datasets: [{
           label: 'Slakkenpopulatie',
-          data: [], // Leeg beginnen
+          data: [], 
           borderColor: '#fdff6f',
           backgroundColor: '#fdff6f84',
           borderWidth: 2,
@@ -120,10 +115,9 @@ document.addEventListener('DOMContentLoaded', function () {
     updateChartStepByStep();
   }
 
-  // Event listener voor de startknop
   startBtn.addEventListener('click', function (event) {
-    event.preventDefault(); // Voorkom de standaard actie van de knop
-    const targetSection = document.querySelector('#question'); // Zoek de doelsectie
-    targetSection.scrollIntoView({ behavior: 'smooth' }); // Voer de smooth scroll uit
+    event.preventDefault(); 
+    const targetSection = document.querySelector('#question');
+    targetSection.scrollIntoView({ behavior: 'smooth' });
   });
 });

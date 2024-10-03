@@ -32,5 +32,4 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 })
 
-// Slakken-teller 
 
