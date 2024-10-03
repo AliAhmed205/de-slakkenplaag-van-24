@@ -68,6 +68,10 @@ main section {
       var(--sp-black) 100%);
 }
 
+.homepage > i {
+  display: none; 
+}
+
 .homepage h2 {
   position: relative;
   z-index: 99;
@@ -451,6 +455,10 @@ html:has(.cls-4:hover) .cls-2, html:has(.cls-4:hover) .cls-3 {
   height: 30vw;
 }
 
+.mobileText {
+  display: none;
+}
+
 @media (max-width: 768px) {
   
   main > h1:first-of-type {
@@ -473,9 +481,22 @@ html:has(.cls-4:hover) .cls-2, html:has(.cls-4:hover) .cls-3 {
   }
   
   .homepage a {
-    font-size: 0.9rem;
-    padding: 0.8rem 1.5rem;
-    margin-top: 1rem;
+    display: none;
+  }
+
+  .homepage .mobileText {
+    display: block;
+    padding-top: 2rem;
+    animation: fadeIn .5s 4s backwards;
+    opacity: 1;
+  }
+
+  .homepage > i {
+    display: block;
+    font-size: 2rem;
+    color: var(--title-color);
+    padding-top: 1rem;
+    animation: fadeIn .5s 4s backwards;
   }
 
   .dashboard-container{
