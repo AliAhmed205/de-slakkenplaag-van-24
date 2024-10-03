@@ -20,41 +20,29 @@ html {
   --regular-p: "Montserrat", sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/********************/
-/* Standard Styling */
-/********************/
-
 p,
 li {
   color: white;
   font-family: var(--regular-p);
 }
 
-/**********/
-/* Header */
-/**********/
 
-header {
+main > h1:first-of-type {
   position: absolute;
   top: 0;
   z-index: 99;
-}
 
-header h1 {
-  background-color: var(--sp-black);
   width: 100vw;
-  text-align: center;
   padding: .6rem;
+  
   color: var(--sp-white);
+  background-color: var(--sp-black);
+  text-align: center;
   font-weight: 500;
   font-size: .7rem;
   font-family: var(--regular-p);
 }
 
-
-/********/
-/* Main */
-/********/
 
 main {
   position: relative;
@@ -62,10 +50,6 @@ main {
   overflow-y: scroll;
   height: 100vh;
 }
-
-/********************/
-/* Homepage styling */
-/********************/
 
 main section {
   width: 100vw;
@@ -454,12 +438,12 @@ html:has(.cls-4:hover) .cls-2, html:has(.cls-4:hover) .cls-3 {
 .question.visible,
 .slakkenPopulatieChart.visible,
 .counter.visible {
-  opacity: 1; /* Word zichtbaar als de klasse wordt toegevoegd */
+  opacity: 1; 
 }
 
 .regenval-container {
   width: 100vw;
-  /* height: fit-content; */
+  
 }
 
 .raining {
