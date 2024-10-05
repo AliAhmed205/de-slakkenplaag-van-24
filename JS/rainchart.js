@@ -39,11 +39,11 @@ const config = {
           {
               label: 'Hoeveelheid Neerslag (mm)',
               data: neerslagDataClean,
-              backgroundColor: 'rgba(54, 162, 235, 0.5)',
-              borderColor: 'rgba(54, 162, 235, 1)',
+              backgroundColor: '#87cefa4e',
+              borderColor: '#87cefa',
               borderWidth: 1,
               yAxisID: 'y',
-              type: 'bar'
+              type: 'bar',
           },
           {
               label: 'Gem. Temperatuur (°C)',
@@ -52,20 +52,43 @@ const config = {
               borderColor: 'rgba(255, 99, 132, 1)',
               tension: 0.1,
               yAxisID: 'y1',
-              type: 'line'
+              type: 'line',
           }
       ]
   },
   options: {
       responsive: true,
       maintainAspectRatio: false, // Dit is belangrijk om het aspect ratio te negeren
+      plugins: {
+          title: {
+              display: true,
+              text: 'Wat was de hoeveelheid neerslag in millimeters die in mei 2024 viel?', // De titel van de grafiek
+              font: {
+                  size: 24, // Grotere lettergrootte
+                  weight: 'bold' // Dikkere tekst
+              },
+              color: '#beff6f' // Kleur van de titel
+          },
+          legend: {
+              labels: {
+                  color: 'white' // Kleur van de labels voor neerslag en temperatuur
+              }
+          }
+      },
       scales: {
           y: {
               beginAtZero: true,
               position: 'left',
               title: {
                   display: true,
-                  text: 'Hoeveelheid Neerslag (mm)'
+                  text: 'Hoeveelheid Neerslag (mm)',
+                  color: '#beff6f', // Kleur van de y-as titel
+                  font: {
+                      size: 16 // Grotere lettergrootte
+                  }
+              },
+              ticks: {
+                color: "#fff"
               }
           },
           y1: {
@@ -76,8 +99,20 @@ const config = {
               },
               title: {
                   display: true,
-                  text: 'Gem. Temperatuur (°C)'
+                  text: 'Gem. Temperatuur (°C)',
+                  color: '#beff6f', 
+                  font: {
+                      size: 16 // Grotere lettergrootte
+                  }
+              },
+              ticks: {
+                color: '#fff'
               }
+          },
+          x: {
+            ticks: {
+              color: "#fff"
+            }
           }
       }
   }

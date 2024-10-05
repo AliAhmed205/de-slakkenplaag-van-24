@@ -27,13 +27,13 @@ li {
 }
 
 
-main > h1 {
+main>h1 {
   position: absolute;
   top: 0;
   z-index: 99;
   width: 100vw;
   padding: .6rem;
-  
+
   color: var(--sp-white);
   background-color: var(--sp-black);
   text-align: center;
@@ -42,17 +42,15 @@ main > h1 {
   font-family: var(--regular-p);
 }
 
-main > h2 {
+main>h2 {
   position: absolute;
   top: 2rem;
   width: 100vw;
-  background: repeating-linear-gradient(
-    45deg,
-    black,
-    black 20px,
-    #dbdb4f 20px,
-    #dbdb4f 40px
-  ); 
+  background: repeating-linear-gradient(45deg,
+      black,
+      black 20px,
+      #dbdb4f 20px,
+      #dbdb4f 40px);
   z-index: 99;
   text-align: center;
   color: rgb(255, 255, 255);
@@ -83,8 +81,8 @@ main section {
       var(--sp-black) 100%);
 }
 
-.homepage > i {
-  display: none; 
+.homepage>i {
+  display: none;
 }
 
 .homepage h2 {
@@ -214,7 +212,7 @@ main section {
   background-color: black;
 }
 
-.dashboard-container > h1 {
+.dashboard-container>h1 {
   color: #beff6f;
   text-align: center;
   font-size: 3rem;
@@ -229,11 +227,11 @@ main section {
   grid-gap: 1rem;
   width: 100vw;
   height: fit-content;
-  padding: .5rem;
+  padding: 0 2.5rem 2.5rem 2.5rem;
 }
 
 .dashboard-item {
-  background: linear-gradient( #113e11 0, #265e26 100%);
+  background: linear-gradient(#113e11 0, #265e26 100%);
   background-color: #1c3b1c;
   padding: 0px;
   border-radius: 10px;
@@ -245,36 +243,43 @@ main section {
   position: relative;
 }
 
-.dashboard-item h1, h2, h3 {
+.dashboard-item h1,
+h2,
+h3 {
   font-family: var(--regular-p);
   color: var(--title-color);
 }
 
 /* Specifieke layout voor elk item */
 .item-1 {
-  grid-column: span 3; /* Dit item beslaat 4 kolommen */
-  grid-row: span 2; /* Dit item beslaat 2 rijen */
+  grid-column: span 3;
+  /* Dit item beslaat 4 kolommen */
+  grid-row: span 2;
+  /* Dit item beslaat 2 rijen */
   font-family: var(--regular-p);
 }
 
 .item-2 {
-  grid-column: span 5; /* Dit item beslaat 6 kolommen */
-  grid-row: span 1; 
+  grid-column: span 5;
+  /* Dit item beslaat 6 kolommen */
+  grid-row: span 1;
   padding: 1.2rem;
 }
 
 .item-3 {
-  grid-column: span 4; /* Dit item beslaat 3 kolommen */
-  grid-row: span 6; /* Dit item beslaat 3 rijen */
-} 
+  grid-column: span 4;
+  /* Dit item beslaat 3 kolommen */
+  grid-row: span 6;
+  /* Dit item beslaat 3 rijen */
+}
 
 .item-4 {
   position: relative;
-  background: linear-gradient( lightskyblue 0, #265e26 100%);
+  background: linear-gradient(lightskyblue 0, #265e26 100%);
   grid-column: span 5;
   grid-row: span 5;
   text-align: center;
-} 
+}
 
 .item-4 p {
   width: 60%;
@@ -319,27 +324,27 @@ main section {
   font-size: 7rem;
   line-height: 4rem;
   color: var(--title-color);
-}  
+}
 
 .item-1 p {
   animation: fadeIn .5s 1s backwards;
   width: 70%;
   text-align: center;
-}  
+}
 
 .item-1 h2 {
   font-size: 3rem;
   color: var(--title-color);
-}  
+}
 
 .slak-icon {
   fill: var(--title-color);
-}  
+}
 
 .item-1 svg {
   width: 50%;
   margin: 1rem 0;
-}  
+}
 
 
 .item-2 h2 {
@@ -354,13 +359,13 @@ main section {
   text-align: center;
 }
 
-.item-3 svg  {
+.item-3 svg {
   width: 100%;
   margin: auto 0;
 }
 
 .item-3 h3 {
-  margin: 0 auto 1rem 0 ;
+  margin: 0 auto 1rem 0;
 
 }
 
@@ -376,7 +381,7 @@ main section {
   list-style-type: none;
   position: relative;
   display: flex;
-  gap: .5rem ;
+  gap: .5rem;
   align-items: center;
   transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -392,42 +397,51 @@ main section {
 .item-3 ul li:nth-of-type(1) div {
   background-color: #b6ffff;
 }
+
 .item-3 ul li:nth-of-type(2) div {
   background-color: #e5d861;
 }
+
 .item-3 ul li:nth-of-type(3) div {
   background-color: #db7d5d;
 }
 
-.cls-2, .cls-3, .cls-4 {
+.cls-2,
+.cls-3,
+.cls-4 {
   transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.cls-5, .cls-6 {
+.cls-5,
+.cls-6 {
   pointer-events: none;
   user-select: none;
 }
 
-html:has(.cls-2:hover) .cls-3, html:has(.cls-2:hover) .cls-4 {
+html:has(.cls-2:hover) .cls-3,
+html:has(.cls-2:hover) .cls-4 {
   opacity: .2;
 }
-html:has(.cls-2:hover) .item-3 ul li:nth-of-type(1), 
+
+html:has(.cls-2:hover) .item-3 ul li:nth-of-type(1),
 html:has(.cls-2:hover) .item-3 ul li:nth-of-type(3) {
   opacity: .2;
 }
 
-html:has(.cls-3:hover) .cls-2, html:has(.cls-3:hover) .cls-4 {
+html:has(.cls-3:hover) .cls-2,
+html:has(.cls-3:hover) .cls-4 {
   opacity: .2;
 }
 
 
-html:has(.cls-3:hover) .item-3 ul li:nth-of-type(3), 
+html:has(.cls-3:hover) .item-3 ul li:nth-of-type(3),
 html:has(.cls-3:hover) .item-3 ul li:nth-of-type(2) {
   opacity: .2;
 }
 
 
-html:has(.cls-4:hover) .cls-2, html:has(.cls-4:hover) .cls-3 {
+html:has(.cls-4:hover) .cls-2,
+html:has(.cls-4:hover) .cls-3 {
   opacity: .2;
 }
 
@@ -440,6 +454,7 @@ html:has(.cls-4:hover) .cls-2, html:has(.cls-4:hover) .cls-3 {
   fill: #beff6f;
   animation: midNL .5s 2.5s forwards;
 }
+
 .cls-4 {
   fill: #beff6f;
   animation: rightNL .5s 3s forwards;
@@ -449,52 +464,149 @@ html:has(.cls-4:hover) .cls-2, html:has(.cls-4:hover) .cls-3 {
 .question,
 .slakkenPopulatieChart,
 .counter {
-  opacity: 0; /* Begin onzichtbaar */
-  transition: opacity 0.5s ease; /* Zorg voor een vloeiende overgang */
+  opacity: 0;
+  /* Begin onzichtbaar */
+  transition: opacity 0.5s ease;
+  /* Zorg voor een vloeiende overgang */
 }
 
 .dashboard-item.visible,
 .question.visible,
 .slakkenPopulatieChart.visible,
 .counter.visible {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .regenval-container {
   width: 100vw;
-  
+
 }
 
-.raining {
-  width: 50vw;
-  height: 30vw;
-}
+
 
 .mobileText {
   display: none;
 }
 
+.regenval-container {
+  /* overflow: visible; */
+  background: linear-gradient(black 0%, #437eff 100%);
+  color: #87cefa4e;
+}
+
+.regenval-container .raining {
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+}
+
+.regenval-container>h2 {
+  margin: 1rem 0;
+}
+
+.regenval-container .raining #myrainChart {
+  width: 378px;
+  height: 504px;
+  padding: 1rem;
+}
+
+.regenval-container .regenval-text {
+  width: 30%;
+  position: relative;
+  z-index: 99;
+  /* max-width: 30%; */
+  margin-right: auto;
+  margin-left: 3rem;
+  margin-top: 2rem;
+}
+
+.regenval-container .regenval-text p {
+  line-height: 1.3rem;
+  font-size: .8rem;
+}
+
+.regenval-container .regenval-text h2 {
+  text-align: left;
+  width: 100%;
+  font-family: var(--script-font);
+  font-size: 2.5rem;
+}
+
+.social-media-container {
+  padding: 2rem;
+  background: linear-gradient(#437eff 0%, #000 100%);
+}
+
+.social-media-container h2 {
+  font-family: var(--script-font);
+  font-size: 3rem;
+  margin: 0;
+}
+
+.social-media-container p {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  margin: 1rem 0 0 0;
+}
+
+#photoContainer {
+  display: flex;
+  overflow-x: scroll;
+  margin-top: 20px;
+  height: 70vh;
+  width: 100%;
+  justify-content: center;
+  margin: 2rem auto auto auto;
+}
+
+
+.photo {
+  aspect-ratio: 1/1;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .5s;
+}
+
+.photo img {
+  width: 100%;
+  border-radius: 10px;
+
+}
+
+.chart-container {
+  height: 65vh;
+  width: 98vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+
+
 @media (max-width: 768px) {
-  
-  main > h1:first-of-type {
+
+  main>h1:first-of-type {
     font-size: 0.5rem;
   }
-  
+
   .homepage h2 {
     font-size: 4rem;
   }
-  
+
   .homepage h1 {
     font-size: 2rem;
     margin: 0;
   }
-  
+
   .homepage p {
     font-size: 1rem;
     width: 80%;
     margin: 0;
   }
-  
+
   .homepage a {
     display: none;
   }
@@ -506,7 +618,7 @@ html:has(.cls-4:hover) .cls-2, html:has(.cls-4:hover) .cls-3 {
     opacity: 1;
   }
 
-  .homepage > i {
+  .homepage>i {
     display: block;
     font-size: 2rem;
     color: var(--title-color);
@@ -514,11 +626,13 @@ html:has(.cls-4:hover) .cls-2, html:has(.cls-4:hover) .cls-3 {
     animation: fadeIn .5s 4s backwards;
   }
 
-  .dashboard-container{
-    min-height: 100vh; /* Zorg dat de container minstens de hoogte van het scherm heeft */
-    height: auto; /* Laat de hoogte automatisch aanpassen */
+  .dashboard-container {
+    min-height: 200vh;
+    /* Zorg dat de container minstens de hoogte van het scherm heeft */
+    height: auto;
+    /* Laat de hoogte automatisch aanpassen */
   }
-  
+
   .dashboard {
     overflow: inherit;
     display: block;
@@ -534,8 +648,8 @@ html:has(.cls-4:hover) .cls-2, html:has(.cls-4:hover) .cls-3 {
     height: 200px;
   }
 
-  .dashboard-item h1, 
-  .dashboard-item h2, 
+  .dashboard-item h1,
+  .dashboard-item h2,
   .dashboard-item h3 {
     font-size: 1.2rem;
   }
@@ -614,11 +728,13 @@ html:has(.cls-4:hover) .cls-2, html:has(.cls-4:hover) .cls-3 {
     fill: #b6ffff;
   }
 }
+
 @keyframes midNL {
   to {
     fill: #e5d861;
   }
 }
+
 @keyframes rightNL {
   to {
     fill: #db7d5d;

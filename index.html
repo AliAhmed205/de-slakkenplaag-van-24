@@ -17,7 +17,7 @@
 <body>
   <main>
     <h1>Ali Ahmed | Datavisualisatie 24-25 | Information Design</h1>
-    <h2>UNDER CONSTRUCTION</h2>
+    <!-- <h2>UNDER CONSTRUCTION</h2> -->
     <section id="homepage" class="homepage">
       <h1>De 'slakkenplaag' van 2024</h1>
       <h2>Feit of Fabel?</h2>
@@ -26,8 +26,8 @@
         slakken in tuinen en op gewassen. Maar was het werkelijk een
         plaag, of slechts een tijdelijk gevolg van het
         natte weer?</p>
-        <h3 class="mobileText">Laten we het mysterie oplossen!</h3>
-        <i id="arrowDown" class="fa-solid fa-arrow-down"></i>
+      <h3 class="mobileText">Laten we het mysterie oplossen!</h3>
+      <i id="arrowDown" class="fa-solid fa-arrow-down"></i>
       <a id="startBtn" href="#question"><i class="fa-solid fa-magnifying-glass"></i> Los het mysterie
         op</a>
       <div class="slug-container" style="--x:.67">
@@ -269,15 +269,35 @@
     </section>
 
     <section class="regenval-container">
+      <section class="regenval-text">
+        <h2>Wat weten we nu?</h2>
+        <p>Slakken komen het liefst tevoorschijn als het nat en vochtig is, wat meestal door regen wordt veroorzaakt. Om
+          te bepalen hoe nat het in de maand mei was, moeten we terug in de tijd kijken en nagaan hoeveel millimeter
+          neerslag er is gevallen en wat de gemiddelde temperatuur was. Het is belangrijk om te vermelden dat slakken
+          ook niet van koud weer houden; de meeste slakken zijn al inactief bij temperaturen tussen de -5 en 5 graden.
+          Bovendien kunnen ze ook niet goed omgaan met extreem warm weer.</p>
+      </section>
       <div class="raining">
-      <canvas id="myrainChart"></canvas>
-    </div>
+        <canvas id="myrainChart"></canvas>
+      </div>
+    </section>
+    <section class="social-media-container">
+      <h2>Resultaat op social media</h2>
+      <p>Op <b>sociale media</b> zijn berichten verschenen over de regen, waarbij veel mensen foto's van slakken hebben
+        gedeeld. Regen zorgt namelijk voor ideale omstandigheden voor slakken, wat resulteert in meer activiteit, zoals
+        te zien is in de posts.</p>
+      <div id="photoContainer"></div>
+      <div class="chart-container">
+        <canvas id="myChartInsta" width="380" height="60"></canvas>
+        <!-- <canvas id="myChartRain" width="380" height="30"></canvas> -->
+      </div>
     </section>
   </main>
   <footer>
   </footer>
   <script src="./JS/slak.js"></script>
   <script src="./JS/linechart.js"></script>
+  <script src="./JS/socialmedia.js"></script>
   <script src="./JS/rainchart.js"></script>
 </body>
 
