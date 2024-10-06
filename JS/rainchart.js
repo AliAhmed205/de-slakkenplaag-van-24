@@ -30,8 +30,8 @@ const neerslagData = [
 
 const neerslagDataClean = neerslagData.map((value) => value === null ? 0 : value);
 
-// Configuratie van de grafiek
-const config = {
+// configRainuratie van de grafiek
+const configRain = {
   type: 'bar', // Staafgrafiek voor neerslag
   data: {
       labels: labels,
@@ -121,5 +121,5 @@ const config = {
 // Creëer de grafiek
 const myChart = new Chart(
   document.getElementById('myrainChart'),
-  config
+  configRain
 );

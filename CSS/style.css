@@ -584,6 +584,429 @@ html:has(.cls-4:hover) .cls-3 {
   justify-content: flex-end;
 }
 
+.relational-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1;
+  background: linear-gradient(black 20%, #5e8d25 100%);
+}
+
+.relational-container .relation-img {
+  grid-column: 1;
+  grid-row: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.relational-container .relation-img img {
+  width: 100%;
+  animation: float 5s infinite;
+}
+
+.relational-container .relation-img h2 {
+  padding: 2rem 2rem 0 2rem;
+  text-align: center;
+}
+
+.relational-container .relation-about {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+}
+
+.relational-container .relation-about img {
+  padding: 1rem 0;
+  width: 40%;
+}
+
+.relational-container .relation-about p {
+  width: 80%;
+}
+
+.relational-container .relation-about .areachart {
+  width: 90%;
+}
+
+
+/* Map Container  */
+
+
+.map-container {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  overflow: hidden;
+  font-family: var(--regular-p);
+}
+
+.map-container #sidebar {
+  position: absolute;
+  width: 537px;
+  background-color: white;
+  border: 1px solid whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.22) 10px 10px 30px;
+  z-index: 3;
+  padding: 1rem;
+  border-radius: 0 1rem 1rem 0rem;
+  translate: 0 100px;
+  transition: transform 0.3s ease;
+}
+
+
+
+.map-container #sidebar h1 {
+  font-size: 1.3rem;
+  color: #21340a;
+  margin: 1rem 0;
+}
+
+
+.map-container #sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+.map-container .arrow {
+  position: absolute;
+  right: -3.8rem;
+  top: 4rem;
+  padding: 0 1rem;
+  border-radius: 0 25% 25% 0;
+  border: none;
+  background-color: #21340a;
+  color: var(--title-color);
+  font-size: 2rem;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  /* Zorg dat de cursor verandert in een handje om aan te geven dat het klikbaar is */
+}
+.map-container .day:hover {
+  background-color: darkgreen; /* Hover-effect */
+  color: white;
+}
+
+.map-container h3 {
+  color: #21340a
+}
+
+.map-container #map {
+  flex: 2;
+  /* Kaart neemt 2 eenheden in */
+  height: 100vh;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.map-container #calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.map-container .day {
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+.map-container .legend {
+  margin-top: 20px;
+  padding: 0 20px 20px 20px;
+  border: 1px solid #ddd;
+  background-color: white;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 3;
+  transition: 0.3s ease;
+}
+
+.map-container .legend button {
+  background-color: #21340a;
+  color: greenyellow;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+
+.map-container .legend.hide {
+  translate: 0 113%;
+}
+
+.map-container .legend h2 {
+  margin: 1rem 0;
+  color: #21340a;
+
+}
+
+.map-container .legend .item {
+  margin-bottom: 10px;
+}
+
+.map-container .legend .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  text-align: center;
+  border-radius: 20%;
+}
+
+.map-container .darkblue {
+  background-color: darkblue;
+}
+
+.map-container .blue {
+  background-color: blue;
+}
+
+.map-container .box {
+  position: relative;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  background-color: green;
+}
+
+.map-container>a:nth-of-type(1) {
+  position: absolute;
+  top: 1rem;
+  rotate: 180deg;
+  z-index: 3;
+  left: 50%;
+  right: 50%;
+  font-size: 3rem;
+  color: #21340a;
+}
+
+.map-container>a:nth-of-type(2) {
+  position: absolute;
+  bottom: 1rem;
+  z-index: 3;
+  left: 50%;
+  right: 50%;
+  font-size: 3rem;
+  color: #21340a;
+}
+
+
+.map-container .lightblue {
+  background-color: lightblue;
+}
+
+.map-container .slug-icon {
+  font-size: 18px;
+}
+
+.map-container .info-text {
+  margin-top: 10px;
+}
+
+.map-container {
+  width: 100vw;
+}
+
+/* Kalf school map */
+
+.dekalf-container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.dekalf-container .navbar {
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+  display: flex;
+  font-size: .8rem;
+  justify-content: space-between;
+}
+
+.dekalf-container #zoomControls {
+  margin-bottom: 10px;
+  position: absolute;
+  z-index: 99;
+}
+
+.dekalf-container .kaart-container {
+  position: relative;
+  grid-column: 2;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.dekalf-container .kalf-legenda {
+  width: 13rem;
+  min-width: auto;
+  padding: 0 1rem 1rem 1rem;
+  height: auto;
+  min-height: auto;
+  background-color: white;
+  position: absolute;
+  border-radius: .5rem;
+  z-index: 1;
+  bottom: 2rem;
+  left: 3rem;
+}
+
+.dekalf-container .kalf-legenda h2 {
+  padding: .5rem 0;
+  color: #5e8d25;
+}
+
+.dekalf-container .kalf-legenda ul li:nth-of-type(1)::marker {
+  color: red;
+}
+
+.dekalf-container .kalf-legenda ul li:nth-of-type(2)::marker {
+  color: rgb(79, 144, 255);
+}
+
+.dekalf-container .kalf-legenda ul li:nth-of-type(3)::marker {
+  color: rgb(255, 204, 0);
+}
+
+.dekalf-container .marker.bevinding {
+  background-color: red;
+}
+
+.dekalf-container .marker.foto {
+  background-color: rgb(79, 144, 255);
+}
+
+.dekalf-container .marker.video {
+  background-color: rgb(255, 204, 0);
+}
+
+
+.dekalf-container .kalf-legenda ul {
+  padding: 0 0 0 1rem;
+}
+.dekalf-container .kalf-legenda ul li {
+  color: #21340a;
+}
+
+.dekalf-container #zoomControls button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dekalf-container .kalf-container {
+  width: 50vw;
+  height: 40vw;
+  background-size: contain;
+  background-position: center;
+  position: relative;
+  background-image: url('../IMG/schooltuin-de-kalf.png');
+  border-radius: 0 0 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dekalf-container .marker {
+  width: 8px;
+  aspect-ratio: 1/1;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
+  animation: popIn .5s backwards;
+}
+
+.dekalf-container .popup {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(-10px);
+  width: 15%;
+  object-fit: cover;
+}
+
+.dekalf-container .popup.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dekalf-container .popup img {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+.dekalf-container .close {
+  cursor: pointer;
+  float: right;
+  font-size: 24px;
+}
+
+.dekalf-container #dayButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.dekalf-container #dayButtons button {
+  background-color: greenyellow;
+  color: black;
+  padding: .5rem 2rem;
+}
+
+#popup-description {
+  color: #21340a;
+}
+
+#popup-title {
+  color: #5e8d25;
+  font-size: 1rem;
+}
+
+.dekalf-container video {
+  width: 100%;
+}
+
+
+@keyframes popIn {
+  0% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 2;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
 
 
 @media (max-width: 768px) {

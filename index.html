@@ -6,12 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Datavisualisatie | Ali Ahmed | Information Design</title>
   <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐌</text></svg>">
+  href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐌</text></svg>">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="./CSS/style.css">
   <script src="https://kit.fontawesome.com/a6e62f9472.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js">
+  </script>
 </head>
 
 <body>
@@ -289,16 +290,118 @@
       <div id="photoContainer"></div>
       <div class="chart-container">
         <canvas id="myChartInsta" width="380" height="60"></canvas>
-        <!-- <canvas id="myChartRain" width="380" height="30"></canvas> -->
+      </div>
+    </section>
+    <section id="relation-id" class="relational-container">
+      <div class="relation-img">
+        <h2>Wat valt op aan de slakkensoort op de Instagram-foto's met de hashtag #slakkenplaag?</h2>
+        <img src="./IMG/relational-diagram.png" alt="">
+      </div>
+      <div class="relation-about">
+        <h2>Arion Vulgaris</h2>
+        <p>De Arion vulgaris, beter bekend als de Spaanse wegslak of de grote bruine wegslak, is een soort van
+          slijmnaakslak die veel voorkomt in delen van Europa, met een concentratie in Zuid-Europa. Hieronder volgt een
+          uitgebreide beschrijving van deze soort.
+        </p>
+        <img src="./IMG/slug-transparent.png" alt="Spaanse Naakteslak">
+        <p>Aan de hand van de foto's kan er vastgesteld worden dat spaanse wegslak het meest voorkwam tijdens in Mei.
+          Hoe zit het met de maanden ervoor, of juist de maanden erna. Hieronder zie je het aantal waarnemingen per maand
+          tot Oktober 2024.
+        </p>
+        <div class="areachart">
+          <canvas id="waarnemingenAreaChart"></canvas>
+      </div>  
+      </div>
+    </section>
+    <section class="map-container">
+      <a href="#relation-id"><i class="fa-regular fa-circle-down"></i></a>
+      <div id="sidebar">
+        <button type="button" class="arrow"><i class="fa-solid fa-arrow-right"></i></button>
+        <h1>Hoeveel spaanse wegslak bevindingen werden er dagelijks in de maand mei aangetroffen na regen?</h1>
+        <div id="calendar"></div>
+        <!-- Legenda -->
+        <h3 id="snailCount">Het aantal slakken: 0</h3>
+      </div>
+      <div class="legend">
+        <h2>Agenda-legenda</h2>
+        <div class="item">
+          <span class="icon darkblue"></span>
+          Donkerblauw: Veel regen (> 10 mm)
+        </div>
+        <div class="item">
+          <span class="icon blue"></span>
+          Blauw: Gemiddelde regen (5-10 mm)
+        </div>
+        <div class="item">
+          <span class="icon lightblue"></span>
+          Lichtblauw: Weinig regen (0-5 mm)
+        </div>
+        <div class="item">
+          <span class="icon slug-icon">🐌</span>
+          Slakken: Elke 🐌 staat voor één waargenomen rode wegslak.
+        </div>
+        <button id="showSnails">Toon alle slakken</button>
+        <div class="info-text">
+          Gebaseerd op waarnemingen van rode wegslakken op <a href="https://waarneming.nl"
+            target="_blank">waarneming.nl</a>.
+        </div>
+      </div>
+      <a href="#box-id"><i class="fa-regular fa-circle-down"></i></a>
+      <div id="map"></div>
+    </section>
+    <section id="box-id" class="dekalf-container">
+
+      <div class="kaart-container">
+        <nav class="navbar">
+          <span id="datum"><i class="fa-solid fa-calendar-days"></i> Datum: 26/09/2024</span>
+          <span id="temperature"><i class="fa-solid fa-temperature-full"></i> Temperatuur: 20°C</span>
+          <span id="precipitation"><i class="fa-solid fa-cloud-rain"></i> Neerslag: 5mm</span>
+          <span id="slugs"><i class="fa-solid fa-magnifying-glass"></i> Aantal slakken: 3</span>
+        </nav>
+      <div class="kalf-container" id="kalfContainer">
+        <!-- Markers worden hier dynamisch toegevoegd via JavaScript -->
+      </div>
+      <div class="kalf-legenda">
+        <h2>Legenda</h2>
+         <ul>
+          <li>Bevindingen</li>
+          <li>Locatie foto</li>
+          <li>Video</li>
+         </ul>
+      </div>
+    </div>  
+      <div id="popup" class="popup">
+        <span class="close" id="closePopup">&times;</span>
+        <div id="popup-content">
+          <h2 id="popup-title"></h2>
+          <div id="popup-image"></div> <!-- Dit wordt nu gebruikt voor zowel afbeeldingen als video's -->
+          <p id="popup-description"></p>
+        </div>
+      </div>
+      <img src="./IMG/day-1/IMG_4215.jpg" alt="">
+  
+      <div id="dayButtons">
+        <button type="button" data-day="1">Dag 1</button>
+        <button type="button" data-day="2">Dag 2</button>
+        <button type="button" data-day="3">Dag 3</button>
+        <button type="button" data-day="4">Dag 4</button>
+        <button type="button" data-day="5">Dag 5</button>
+        <button type="button" data-day="6">Dag 6</button>
+        <button type="button" data-day="7">Dag 7</button>
+        <button type="button" data-day="8">Dag 8</button>
       </div>
     </section>
   </main>
   <footer>
   </footer>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="./JS/gebied.js"></script>
+  <script src="./JS/areachart.js"></script>
   <script src="./JS/slak.js"></script>
   <script src="./JS/linechart.js"></script>
   <script src="./JS/socialmedia.js"></script>
   <script src="./JS/rainchart.js"></script>
+  <script src="./JS/kalff.js"></script>
 </body>
 
 </html>
