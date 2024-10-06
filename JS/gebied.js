@@ -326,7 +326,7 @@ function showAllSnails() {
         const marker = L.marker(coords, {
           icon: L.divIcon({
             className: 'snail-icon',
-            html: '<img src="/IMG/red-slug.svg" alt="Slak" class="snail-icon">', // Hier je SVG gebruiken
+            html: '<img src="./IMG/red-slug.svg" alt="Slak" class="snail-icon">', // Hier je SVG gebruiken
             iconSize: [30, 30], // Grootte van de slak
             iconAnchor: [15, 15] // Centreringspunt
           })
@@ -365,7 +365,7 @@ function showSnailsBasedOnRain(day) {
       const marker = L.marker(coords, {
         icon: L.divIcon({
           className: 'snail-icon',
-          html: '<img src="/img/red-slug.svg" alt="Slak" class="snail-icon">',
+          html: '<img src="./IMG/red-slug.svg" alt="Slak" class="snail-icon">',
           iconSize: [30, 30],
           iconAnchor: [15, 15]
         })
