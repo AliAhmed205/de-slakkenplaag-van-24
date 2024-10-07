@@ -215,9 +215,9 @@ main section {
 .dashboard-container>h1 {
   color: #beff6f;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   padding-top: .2rem;
-  font-family: var(--script-font);
+  font-family: var(--regular-p);
   text-shadow: var(--title-color)0 0 10px;
 }
 
@@ -244,24 +244,26 @@ main section {
 }
 
 .dashboard-item h1,
-h2,
 h3 {
   font-family: var(--regular-p);
   color: var(--title-color);
 }
 
-/* Specifieke layout voor elk item */
+h2 {
+  font-family: var(--regular-p);
+  font-size: 1.5rem;
+  color: var(--title-color);
+  text-shadow: #beff6f85 0 0 10px;
+}
+
 .item-1 {
   grid-column: span 3;
-  /* Dit item beslaat 4 kolommen */
   grid-row: span 2;
-  /* Dit item beslaat 2 rijen */
   font-family: var(--regular-p);
 }
 
 .item-2 {
   grid-column: span 5;
-  /* Dit item beslaat 6 kolommen */
   grid-row: span 1;
   padding: 1.2rem;
 }
@@ -528,8 +530,8 @@ html:has(.cls-4:hover) .cls-3 {
 .regenval-container .regenval-text h2 {
   text-align: left;
   width: 100%;
-  font-family: var(--script-font);
-  font-size: 2.5rem;
+  /* font-size: 2.5rem; */
+  text-shadow: var(--title-color) 0 0 10px;
 }
 
 .social-media-container {
@@ -538,8 +540,6 @@ html:has(.cls-4:hover) .cls-3 {
 }
 
 .social-media-container h2 {
-  font-family: var(--script-font);
-  font-size: 3rem;
   margin: 0;
 }
 
@@ -631,6 +631,10 @@ html:has(.cls-4:hover) .cls-3 {
   width: 80%;
 }
 
+.relational-container .relation-about h2 {
+  font-size: 2rem;
+}
+
 .relational-container .relation-about .areachart {
   width: 90%;
 }
@@ -663,7 +667,7 @@ html:has(.cls-4:hover) .cls-3 {
 
 
 .map-container #sidebar h1 {
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: #21340a;
   margin: 1rem 0;
 }
@@ -748,7 +752,7 @@ html:has(.cls-4:hover) .cls-3 {
 .map-container .legend h2 {
   margin: 1rem 0;
   color: #21340a;
-
+  text-shadow: none;
 }
 
 .map-container .legend .item {
@@ -871,8 +875,6 @@ html:has(.cls-4:hover) .cls-3 {
 }
 
 .dekalf-container h2 {
-  font-size: 1.2rem;
-  width: 80%;
   margin-right: auto;
 }
 
@@ -1071,11 +1073,25 @@ html:has(.cls-4:hover) .cls-3 {
 /*  Conclusie */
 
 .conclusie-container {
-  background: linear-gradient(black 0, lightskyblue 100%)
+  background: linear-gradient(black 0, rgb(75, 186, 255) 100%)
 }
 
-.conclusie-container article {
+.conclusie-container > article {
   width: 50%;
+}
+
+.conclusie-container article article {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: var(--title-color);
+}
+
+.conclusie-container article p {
+  margin: 1rem 0;
 }
 
 
