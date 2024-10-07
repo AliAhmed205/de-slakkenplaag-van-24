@@ -687,8 +687,10 @@ html:has(.cls-4:hover) .cls-3 {
   cursor: pointer;
   /* Zorg dat de cursor verandert in een handje om aan te geven dat het klikbaar is */
 }
+
 .map-container .day:hover {
-  background-color: darkgreen; /* Hover-effect */
+  background-color: darkgreen;
+  /* Hover-effect */
   color: white;
 }
 
@@ -827,13 +829,16 @@ html:has(.cls-4:hover) .cls-3 {
   align-items: center;
   overflow: hidden;
   flex-direction: column;
+
+  background: linear-gradient(#5e8d25 20%, black 100%);
 }
 
 .dekalf-container .navbar {
-  background-color: #333;
+  background-color: #21340a;
   color: white;
+  margin-right: auto;
   padding: 15px 20px;
-  width: 100%;
+  width: 94%;
   border-radius: 1rem 1rem 0 0;
   display: flex;
   font-size: .8rem;
@@ -849,7 +854,26 @@ html:has(.cls-4:hover) .cls-3 {
 .dekalf-container .kaart-container {
   position: relative;
   grid-column: 2;
-  padding: 1rem 1rem 0 1rem;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+  transition: .5s ease-in;
+}
+
+.kaart-container.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.dekalf-container h2 {
+  font-size: 1.2rem;
+  width: 80%;
+  margin-right: auto;
 }
 
 .dekalf-container .kalf-legenda {
@@ -862,13 +886,18 @@ html:has(.cls-4:hover) .cls-3 {
   position: absolute;
   border-radius: .5rem;
   z-index: 1;
-  bottom: 2rem;
-  left: 3rem;
+  bottom: 4rem;
+  left: 4rem;
 }
 
 .dekalf-container .kalf-legenda h2 {
   padding: .5rem 0;
   color: #5e8d25;
+  font-size: 1.2rem;
+}
+
+.dekalf-container.visible {
+  opacity: 1;
 }
 
 .dekalf-container .kalf-legenda ul li:nth-of-type(1)::marker {
@@ -899,8 +928,10 @@ html:has(.cls-4:hover) .cls-3 {
 .dekalf-container .kalf-legenda ul {
   padding: 0 0 0 1rem;
 }
+
 .dekalf-container .kalf-legenda ul li {
   color: #21340a;
+  font-size: .8rem;
 }
 
 .dekalf-container #zoomControls button {
@@ -911,14 +942,17 @@ html:has(.cls-4:hover) .cls-3 {
 }
 
 .dekalf-container .kalf-container {
-  width: 50vw;
-  height: 40vw;
+  width: 43vw;
+  height: 34vw;
   background-size: contain;
   background-position: center;
   position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
   background-image: url('../IMG/schooltuin-de-kalf.png');
   border-radius: 0 0 2rem 2rem;
   display: flex;
+  margin-right: auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -946,6 +980,7 @@ html:has(.cls-4:hover) .cls-3 {
   transform: translateY(-10px);
   width: 15%;
   object-fit: cover;
+  object-position: center;
 }
 
 .dekalf-container .popup.show {
@@ -957,7 +992,6 @@ html:has(.cls-4:hover) .cls-3 {
 .dekalf-container .popup img {
   max-width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
 }
 
 .dekalf-container .close {
@@ -970,14 +1004,26 @@ html:has(.cls-4:hover) .cls-3 {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin: 1rem 0;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .dekalf-container #dayButtons button {
-  background-color: greenyellow;
-  color: black;
-  padding: .5rem 2rem;
+  background-color: #d9ffab;
+  color: #21340a;
+  padding: .5rem 1rem;
+  font-size: var(--regular-p);
+  border-radius: .5rem;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.309) 0 5px 10px;
+  transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+.dekalf-container #dayButtons button.activeBtn {
+  background-color: darkgreen;
+  color: white;
 }
 
 #popup-description {
@@ -991,6 +1037,45 @@ html:has(.cls-4:hover) .cls-3 {
 
 .dekalf-container video {
   width: 100%;
+}
+
+.about-kalf {
+  grid-column: 1;
+  flex-direction: column;
+  display: flex;
+  padding: 2rem;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.about-kalf p {
+  margin: 1rem 0;
+}
+
+.about-kalf iframe {
+  margin: 1rem 0;
+  border-radius: 1rem;
+}
+
+.about-kalf button {
+  width: fit-content;
+  padding: 1rem 2rem;
+  background-color: var(--title-color);
+  color: #1c3b1c;
+  font-size: 1rem;
+  border-radius: 2rem;
+  border: none;
+  box-shadow: var(--title-color) 0 0 10px;
+}
+
+/*  Conclusie */
+
+.conclusie-container {
+  background: linear-gradient(black 0, lightskyblue 100%)
+}
+
+.conclusie-container article {
+  width: 50%;
 }
 
 
