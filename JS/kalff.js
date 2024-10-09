@@ -1,13 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const kalfContainer = document.getElementById('kalfContainer');
-  const popup = document.getElementById('popup');
-  const title = document.getElementById('popup-title');
-  const description = document.getElementById('popup-description');
-  const image = document.getElementById('popup-image');
-  const temperatureElement = document.getElementById('temperature');
-  const precipitationElement = document.getElementById('precipitation');
-  const slugsElement = document.getElementById('slugs');
-  const dateEl = document.getElementById('datum');
+  const kalfContainer = document.getElementById('kalfContainer')
+  const popup = document.getElementById('popup')
+  const title = document.getElementById('popup-title')
+  const description = document.getElementById('popup-description')
+  const image = document.getElementById('popup-image')
+  const temperatureElement = document.getElementById('temperature')
+  const precipitationElement = document.getElementById('precipitation')
+  const slugsElement = document.getElementById('slugs')
+  const dateEl = document.getElementById('datum')
+  const upBtn = document.getElementById('up-button')
+  const downBtn = document.getElementById('down-button')
+  const kalfSection = document.getElementById('box-id')
+  const slugSection = document.getElementById('relation-id')
+
+  upBtn.addEventListener('click', ()=>{
+    slugSection.scrollIntoView({behavior: 'smooth'})
+  })
+  downBtn.addEventListener('click', ()=>{
+    kalfContainer.scrollIntoView({behavior: 'smooth'})
+  })
 
 
   const dayData = {
@@ -59,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
       precipitation: '3mm',
       slugs: 5
     },
-  };
+  }
 
   // Marker data voor elke dag
   const markersData = {
@@ -414,125 +425,125 @@ document.addEventListener("DOMContentLoaded", function () {
      
     ],
     // Voeg meer dagen toe met hun specifieke markers, afbeeldingen en beschrijvingen
-  };
+  }
 
   // Functie om de informatie in de navigatiebalk bij te werken
   function updateNavBar(day) {
-    const data = dayData[day];
-    temperatureElement.innerHTML = `<p><i class="fa-solid fa-temperature-full"></i> Temperatuur: ${data.temperature}</p>`;
-    precipitationElement.innerHTML = `<p><i class="fa-solid fa-cloud-rain"></i> Neerslag: ${data.precipitation}</p>`;
-    slugsElement.innerHTML = `<p><i class="fa-solid fa-magnifying-glass"></i> Aantal slakken: ${data.slugs}</p>`;
-    dateEl.innerHTML = `<p><i class="fa-solid fa-calendar-days"></i> Datum: ${data.date}</p>`;
+    const data = dayData[day]
+    temperatureElement.innerHTML = `<p><i class="fa-solid fa-temperature-full"></i> Temperatuur: ${data.temperature}</p>`
+    precipitationElement.innerHTML = `<p><i class="fa-solid fa-cloud-rain"></i> Neerslag: ${data.precipitation}</p>`
+    slugsElement.innerHTML = `<p><i class="fa-solid fa-magnifying-glass"></i> Aantal slakken: ${data.slugs}</p>`
+    dateEl.innerHTML = `<p><i class="fa-solid fa-calendar-days"></i> Datum: ${data.date}</p>`
   }
 
   // Voeg markers toe op basis van de dag
   function addMarkers(day) {
-    kalfContainer.innerHTML = ''; // Verwijder oude markers
+    kalfContainer.innerHTML = '' // Verwijder oude markers
 
-    const markers = markersData[day];
+    const markers = markersData[day]
     markers.forEach((marker, index) => {
-      const div = document.createElement('div');
-      div.className = `marker ${marker.type}`; // Voeg class op basis van type (foto, video, bevinding) toe
-      div.style.top = marker.top;
-      div.style.left = marker.left;
-      div.setAttribute('data-marker', `marker${index + 1}`);
+      const div = document.createElement('div')
+      div.className = `marker ${marker.type}` // Voeg class op basis van type (foto, video, bevinding) toe
+      div.style.top = marker.top
+      div.style.left = marker.left
+      div.setAttribute('data-marker', `marker${index + 1}`)
       div.onclick = function () {
-        openPopup(this, marker.image, marker.description);
-      };
-      kalfContainer.appendChild(div);
-    });
+        openPopup(this, marker.image, marker.description)
+      }
+      kalfContainer.appendChild(div)
+    })
   }
   // Open de pop-up
   function openPopup(markerElement, mediaUrl, desc) {
     // Bepaal de titel op basis van het type media (video of afbeelding)
     if (mediaUrl.endsWith('.mp4')) {
-      title.textContent = `Video Bevinding`; // Als het een video is
+      title.textContent = `Video Bevinding` // Als het een video is
     } else {
-      title.textContent = `Foto Bevinding`; // Als het een afbeelding is
+      title.textContent = `Foto Bevinding` // Als het een afbeelding is
     }
 
-    description.textContent = desc; // Gebruik de specifieke beschrijving voor deze marker
+    description.textContent = desc // Gebruik de specifieke beschrijving voor deze marker
 
     // Verwijder eventuele bestaande media (zowel afbeeldingen als video's)
     while (image.firstChild) {
-      image.removeChild(image.firstChild);
+      image.removeChild(image.firstChild)
     }
 
     // Check of de URL eindigt op .mp4 voor video, anders behandel het als een afbeelding
     if (mediaUrl.endsWith('.mp4')) {
-      const video = document.createElement('video');
-      video.src = mediaUrl;
-      video.controls = true; // Voeg afspeelopties toe aan de video
-      video.autoplay = true;
-      video.width = 300; // Optioneel: stel breedte van de video in
-      image.appendChild(video); // Voeg video toe aan de popup
+      const video = document.createElement('video')
+      video.src = mediaUrl
+      video.controls = true // Voeg afspeelopties toe aan de video
+      video.autoplay = true
+      video.width = 300 // Optioneel: stel breedte van de video in
+      image.appendChild(video) // Voeg video toe aan de popup
     } else {
-      const img = document.createElement('img');
-      img.src = mediaUrl;
-      img.alt = desc;
-      img.width = 300; // Optioneel: stel breedte van de afbeelding in
-      image.appendChild(img); // Voeg afbeelding toe aan de popup
+      const img = document.createElement('img')
+      img.src = mediaUrl
+      img.alt = desc
+      img.width = 300 // Optioneel: stel breedte van de afbeelding in
+      image.appendChild(img) // Voeg afbeelding toe aan de popup
     }
 
     // Positioneer de popup boven de marker
-    const rect = markerElement.getBoundingClientRect();
-    const popupHeight = popup.offsetHeight;
-    const popupWidth = popup.offsetWidth;
+    const rect = markerElement.getBoundingClientRect()
+    const popupHeight = popup.offsetHeight
+    const popupWidth = popup.offsetWidth
 
     // Bepaal de nieuwe positie van de popup
-    let popupTop = rect.top + window.scrollY - popupHeight; // Boven de marker
-    let popupLeft = rect.left + window.scrollX + (rect.width / 2) - (popupWidth / 2); // Centraal uitlijnen boven de marker
+    let popupTop = rect.top + window.scrollY - popupHeight // Boven de marker
+    let popupLeft = rect.left + window.scrollX + (rect.width / 2) - (popupWidth / 2) // Centraal uitlijnen boven de marker
 
     // Controleer of de popup buiten het scherm valt en pas aan
     if (popupTop < 0) {
-      popupTop = rect.bottom + window.scrollY; // Zet het onder de marker als er geen ruimte boven is
+      popupTop = rect.bottom + window.scrollY // Zet het onder de marker als er geen ruimte boven is
     }
     if (popupLeft + popupWidth > window.innerWidth + window.scrollX) {
-      popupLeft = window.innerWidth + window.scrollX - popupWidth; // Zorg ervoor dat de popup niet buiten rechts valt
+      popupLeft = window.innerWidth + window.scrollX - popupWidth // Zorg ervoor dat de popup niet buiten rechts valt
     }
     if (popupLeft < 0) {
-      popupLeft = 0; // Zorg ervoor dat de popup niet buiten links valt
+      popupLeft = 0 // Zorg ervoor dat de popup niet buiten links valt
     }
 
     // Stel de positionering van de popup in
-    popup.style.left = `${popupLeft}px`;
-    popup.style.top = `${popupTop}px`;
-    popup.style.display = 'block';
+    popup.style.left = `${popupLeft}px`
+    popup.style.top = `${popupTop}px`
+    popup.style.display = 'block'
 
     // Voeg een CSS klasse toe voor de overgang
-    popup.classList.add('show');
+    popup.classList.add('show')
   }
 
   // Sluit de pop-up
   document.getElementById('closePopup').onclick = function () {
     // Verwijder de 'show' class en verberg de popup
-    popup.classList.remove('show');
-    popup.style.display = 'none';
+    popup.classList.remove('show')
+    popup.style.display = 'none'
 
     // Zoek naar een video in de popup en pauzeer deze als die bestaat
-    const video = image.querySelector('video');
+    const video = image.querySelector('video')
     if (video) {
-      video.pause(); // Pauzeer de video
-      video.currentTime = 0; // Reset de video naar het begin
+      video.pause() // Pauzeer de video
+      video.currentTime = 0 // Reset de video naar het begin
     }
 
     // Verwijder ook de media-elementen (afbeelding of video) zodat het popup-content leeg is
-    image.innerHTML = '';
-  };
+    image.innerHTML = ''
+  }
 
   // Voeg event listeners toe aan de knoppen
-  const buttons = document.querySelectorAll('#dayButtons button');
+  const buttons = document.querySelectorAll('#dayButtons button')
   buttons.forEach(button => {
     button.addEventListener('click', function () {
-      const day = this.getAttribute('data-day');
-      console.log(`Dag ${day} is geklikt`);  // Log welke dag is geklikt
+      const day = this.getAttribute('data-day')
+      console.log(`Dag ${day} is geklikt`)  // Log welke dag is geklikt
       
-      buttons.forEach(btn => btn.classList.remove('activeBtn'));  // Verwijder de class van alle knoppen
-      updateNavBar(day);
-      addMarkers(day); // Voeg markers toe voor de geselecteerde dag
-      this.classList.add('activeBtn');  // Voeg de active class toe aan de geklikte knop
-    });
-  });
+      buttons.forEach(btn => btn.classList.remove('activeBtn'))  // Verwijder de class van alle knoppen
+      updateNavBar(day)
+      addMarkers(day) // Voeg markers toe voor de geselecteerde dag
+      this.classList.add('activeBtn')  // Voeg de active class toe aan de geklikte knop
+    })
+  })
 
   const showMap = document.querySelector('.about-kalf button') 
   const kalffMap = document.querySelector('.kaart-container')
@@ -542,6 +553,6 @@ showMap.addEventListener('click', ()=>{
 })
 
   // Voeg markers toe voor de eerste dag
-  updateNavBar(1); // Start met dag 1
-  addMarkers(1); // Voeg markers toe voor dag 1
-});
+  updateNavBar(1) // Start met dag 1
+  addMarkers(1) // Voeg markers toe voor dag 1
+})

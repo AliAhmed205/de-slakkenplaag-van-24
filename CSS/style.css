@@ -772,24 +772,30 @@ html:has(.cls-4:hover) .cls-3 {
   background-color: green;
 }
 
-.map-container>a:nth-of-type(1) {
+.btnDirection {
+  aspect-ratio: 1/1;
+  width: 2rem;
+  z-index: 3;
+  left: 50%;
+  width: 5rem;
+  right: 50%;
+  font-size: 3rem;
+  background-color: transparent;
+  border: none;
+}
+
+.map-container .btnDirection:nth-of-type(1) {
   position: absolute;
   top: 1rem;
   rotate: 180deg;
-  z-index: 3;
-  left: 50%;
-  right: 50%;
   font-size: 3rem;
   color: #21340a;
 }
 
-.map-container>a:nth-of-type(2) {
+.map-container .btnDirection:nth-of-type(2) {
   position: absolute;
   bottom: 1rem;
   z-index: 3;
-  left: 50%;
-  right: 50%;
-  font-size: 3rem;
   color: #21340a;
 }
 
