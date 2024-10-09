@@ -65,7 +65,8 @@ const configRain = {
               text: 'Wat was de hoeveelheid neerslag in millimeters die in mei 2024 viel?', // De titel van de grafiek
               font: {
                   size: 24, // Grotere lettergrootte
-                  weight: 'bold' // Dikkere tekst
+                  weight: 'bold', // Dikkere tekst
+                  family: 'Kalam'
               },
               color: '#beff6f' // Kleur van de titel
           },

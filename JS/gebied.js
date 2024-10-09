@@ -297,7 +297,7 @@ for (let day = 1; day <= daysInMonth; day++) {
 
     // Stel de nieuwe geselecteerde dag in
     selectedDayCell = dayCell;
-    selectedDayCell.style.backgroundColor = 'darkgreen'; // Stel de achtergrondkleur in op donker groen
+    selectedDayCell.style.backgroundColor = 'rgb(0, 43, 0)'; // Stel de achtergrondkleur in op donker groen
     selectedDayCell.style.color = 'white'; // Stel de tekstkleur in op wit
 
     showSnailsBasedOnRain(day);
