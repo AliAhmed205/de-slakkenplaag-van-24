@@ -577,7 +577,7 @@ html:has(.cls-4:hover) .cls-3 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1;
-  background: linear-gradient(black 20%, #5e8d25 100%);
+  background: linear-gradient(var(--sp-black) 20%, var(--dark-green) 100%);
 }
 
 .relational-container .relation-img {
@@ -820,11 +820,11 @@ html:has(.cls-4:hover) .cls-3 {
   overflow: hidden;
   flex-direction: column;
 
-  background: linear-gradient(#5e8d25 20%, black 100%);
+  background-image: linear-gradient(var(--dark-green) 0, var(--sp-black) 100%);
 }
 
 .dekalf-container .navbar {
-  background-color: #21340a;
+  background-color: var(--sp-black);
   margin-right: auto;
   padding: 15px 20px;
   width: 94%;
@@ -877,6 +877,7 @@ html:has(.cls-4:hover) .cls-3 {
   padding: .5rem 0;
   color: #5e8d25;
   font-size: 1.2rem;
+  text-shadow: none;
 }
 
 .dekalf-container.visible {
@@ -915,13 +916,6 @@ html:has(.cls-4:hover) .cls-3 {
 .dekalf-container .kalf-legenda ul li {
   color: #21340a;
   font-size: .8rem;
-}
-
-.dekalf-container #zoomControls button {
-  margin: 0 5px;
-  padding: 10px 15px;
-  font-size: 16px;
-  cursor: pointer;
 }
 
 .dekalf-container .kalf-container {
@@ -994,11 +988,12 @@ html:has(.cls-4:hover) .cls-3 {
 
 .dekalf-container #dayButtons button {
   color: #21340a;
+  background-color: var(--title-color);
+  box-shadow: var(--title-color) 0 0 5px;
   padding: .5rem 1rem;
   font-size: var(--regular-p);
   border-radius: .5rem;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.309) 0 5px 10px;
   transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
 
 }

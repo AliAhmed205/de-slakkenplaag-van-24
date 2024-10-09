@@ -55,9 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     8: {
       date: '08/10/2024',
-      temperature: '20°C',
-      precipitation: '5mm',
-      slugs: 1
+      temperature: '15°C',
+      precipitation: '3mm',
+      slugs: 5
     },
   };
 
@@ -359,31 +359,59 @@ document.addEventListener("DOMContentLoaded", function () {
     8: [{
         top: '90%',
         left: '46%',
-        image: './IMG/day-6/IMG_4363.png',
+        image: './IMG/day-8/IMG_4419.png',
         type: 'foto',
-        description: 'Dit is een beschrijving voor Marker 3.'
+        description: 'Het is vandaag 15°C'
       },
       {
-        top: '47%',
-        left: '74%',
-        image: './IMG/day-6/IMG_4361.png',
+        top: '66%',
+        left: '61.5%',
+        image: './IMG/day-8/IMG_4410.png',
+        type: 'foto'
+      },
+      {
+        top: '50%',
+        left: '60.5%',
+        image: './IMG/day-4/IMG_4411.png',
+        type: 'foto',
+        description: '08:12 - Courgette plant status'
+      },
+      {
+        top: '48%',
+        left: '61%',
+        image: './IMG/day-8/IMG_4412.png',
         type: 'bevinding',
-        description: 'Dit is een beschrijving voor Marker 3.'
+        description: '08:16 - Spaanse Wegslak'
+      },
+      {
+        top: '49%',
+        left: '77%',
+        image: './IMG/day-8/IMG_4413.png',
+        type: 'bevinding',
+        description: '08:16 - Spaanse Wegslak'
+      },
+      {
+        top: '49%',
+        left: '75%',
+        image: './IMG/day-8/IMG_4414.png',
+        type: 'bevinding',
+        description: '08:16 - Spaanse Wegslak'
       },
       {
         top: '45%',
         left: '73%',
-        image: './IMG/day-6/IMG_4360.png',
+        image: './IMG/day-8/IMG_4417.png',
         type: 'bevinding',
-        description: 'Dit is een beschrijving voor Marker 3.'
+        description: '08:16 - Spaanse Wegslak'
       },
       {
-        top: '48%',
+        top: '47%',
         left: '71%',
-        image: './IMG/day-6/IMG_4362.png',
-        type: 'foto',
-        description: 'Dit is een beschrijving voor Marker 3.'
+        image: './IMG/day-8/IMG_4418.png',
+        type: 'bevinding',
+        description: '08:16 - Spaanse Wegslak'
       },
+     
     ],
     // Voeg meer dagen toe met hun specifieke markers, afbeeldingen en beschrijvingen
   };

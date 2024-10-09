@@ -173,8 +173,7 @@ const coordinatesPerDay = {
 };
 
 function getLocationDescription(lat, lon) {
-  // Dit is een vereenvoudigd voorbeeld, je kunt eventueel een API zoals Google Maps gebruiken voor nauwkeurige gegevens.
-  const tolerance = 0.05; // Om een kleine foutmarge toe te staan
+  const tolerance = 0.05; 
   for (const [day, locations] of Object.entries(coordinatesPerDay)) {
     for (const [storedLat, storedLon, locationDescription] of locations) {
       if (
@@ -188,7 +187,6 @@ function getLocationDescription(lat, lon) {
   return "Onbekende locatie"; // Als de locatie niet in de lijst staat
 }
 
-// Voorbeeld van hoe je een specifieke dag kunt doorlopen
 function printLocationsForDay(day) {
   const locations = coordinatesPerDay[day];
   if (!locations) {
@@ -224,7 +222,6 @@ showBtn.addEventListener('click', showAllSnails);
 
 var map = L.map('map').setView([52.374, 4.8897], 8); // Startpositie bij Amsterdam
 
-// Voeg een grijze tile layer toe
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
   minZoom: 7,
   maxZoom: 15,
