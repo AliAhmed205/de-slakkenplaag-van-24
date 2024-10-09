@@ -105,6 +105,7 @@ myChartInsta.canvas.addEventListener('mousemove', function (event) {
   }
 });
 
+// Foto's van de geselecteerde dag weergeven
 function displayPhotos(day) {
   const photoContainer = document.getElementById('photoContainer');
   photoContainer.innerHTML = ''; // Maak de container leeg
@@ -120,3 +121,16 @@ function displayPhotos(day) {
     photoContainer.appendChild(photo);
   }
 }
+
+// Highlight de eerste dag bij het laden van de grafiek
+function highlightFirstBar() {
+  const hoveredIndex = 0; // Index voor 1 mei
+  myChartInsta.data.datasets[0].backgroundColor = myChartInsta.data.datasets[0].data.map((_, index) => {
+    return index === hoveredIndex ? '#beff6f87' : 'rgba(190, 255, 111, 0.2)';
+  });
+  myChartInsta.update(); // Grafiek updaten
+}
+
+// Toon foto's voor de eerste dag en highlight de eerste staaf
+displayPhotos(1);
+highlightFirstBar();
