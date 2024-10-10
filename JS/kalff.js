@@ -72,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   }
 
-  // Marker data voor elke dag
   const markersData = {
     1: [
       {
@@ -424,10 +423,8 @@ document.addEventListener("DOMContentLoaded", function () {
       },
      
     ],
-    // Voeg meer dagen toe met hun specifieke markers, afbeeldingen en beschrijvingen
   }
 
-  // Functie om de informatie in de navigatiebalk bij te werken
   function updateNavBar(day) {
     const data = dayData[day]
     temperatureElement.innerHTML = `<p><i class="fa-solid fa-temperature-full"></i> Temperatuur: ${data.temperature}</p>`
@@ -436,14 +433,13 @@ document.addEventListener("DOMContentLoaded", function () {
     dateEl.innerHTML = `<p><i class="fa-solid fa-calendar-days"></i> Datum: ${data.date}</p>`
   }
 
-  // Voeg markers toe op basis van de dag
   function addMarkers(day) {
-    kalfContainer.innerHTML = '' // Verwijder oude markers
+    kalfContainer.innerHTML = '' 
 
     const markers = markersData[day]
     markers.forEach((marker, index) => {
       const div = document.createElement('div')
-      div.className = `marker ${marker.type}` // Voeg class op basis van type (foto, video, bevinding) toe
+      div.className = `marker ${marker.type}` 
       div.style.top = marker.top
       div.style.left = marker.left
       div.setAttribute('data-marker', `marker${index + 1}`)
@@ -453,95 +449,82 @@ document.addEventListener("DOMContentLoaded", function () {
       kalfContainer.appendChild(div)
     })
   }
-  // Open de pop-up
+
   function openPopup(markerElement, mediaUrl, desc) {
-    // Bepaal de titel op basis van het type media (video of afbeelding)
     if (mediaUrl.endsWith('.mp4')) {
-      title.textContent = `Video Bevinding` // Als het een video is
+      title.textContent = `Video Bevinding` 
     } else {
-      title.textContent = `Foto Bevinding` // Als het een afbeelding is
+      title.textContent = `Foto Bevinding` 
     }
 
-    description.textContent = desc // Gebruik de specifieke beschrijving voor deze marker
+    description.textContent = desc 
 
-    // Verwijder eventuele bestaande media (zowel afbeeldingen als video's)
     while (image.firstChild) {
       image.removeChild(image.firstChild)
     }
 
-    // Check of de URL eindigt op .mp4 voor video, anders behandel het als een afbeelding
     if (mediaUrl.endsWith('.mp4')) {
       const video = document.createElement('video')
       video.src = mediaUrl
-      video.controls = true // Voeg afspeelopties toe aan de video
+      video.controls = true 
       video.autoplay = true
-      video.width = 300 // Optioneel: stel breedte van de video in
-      image.appendChild(video) // Voeg video toe aan de popup
+      video.width = 300 
+      image.appendChild(video) 
     } else {
       const img = document.createElement('img')
       img.src = mediaUrl
       img.alt = desc
-      img.width = 300 // Optioneel: stel breedte van de afbeelding in
-      image.appendChild(img) // Voeg afbeelding toe aan de popup
+      img.width = 300 
+      image.appendChild(img) 
     }
 
-    // Positioneer de popup boven de marker
     const rect = markerElement.getBoundingClientRect()
     const popupHeight = popup.offsetHeight
     const popupWidth = popup.offsetWidth
 
-    // Bepaal de nieuwe positie van de popup
-    let popupTop = rect.top + window.scrollY - popupHeight // Boven de marker
-    let popupLeft = rect.left + window.scrollX + (rect.width / 2) - (popupWidth / 2) // Centraal uitlijnen boven de marker
-
-    // Controleer of de popup buiten het scherm valt en pas aan
+    let popupTop = rect.top + window.scrollY - popupHeight 
+    let popupLeft = rect.left + window.scrollX + (rect.width / 2) - (popupWidth / 2)
+    
     if (popupTop < 0) {
-      popupTop = rect.bottom + window.scrollY // Zet het onder de marker als er geen ruimte boven is
+      popupTop = rect.bottom + window.scrollY 
     }
     if (popupLeft + popupWidth > window.innerWidth + window.scrollX) {
-      popupLeft = window.innerWidth + window.scrollX - popupWidth // Zorg ervoor dat de popup niet buiten rechts valt
+      popupLeft = window.innerWidth + window.scrollX - popupWidth 
     }
     if (popupLeft < 0) {
-      popupLeft = 0 // Zorg ervoor dat de popup niet buiten links valt
+      popupLeft = 0 
     }
 
-    // Stel de positionering van de popup in
     popup.style.left = `${popupLeft}px`
     popup.style.top = `${popupTop}px`
     popup.style.display = 'block'
 
-    // Voeg een CSS klasse toe voor de overgang
     popup.classList.add('show')
   }
 
-  // Sluit de pop-up
   document.getElementById('closePopup').onclick = function () {
-    // Verwijder de 'show' class en verberg de popup
     popup.classList.remove('show')
     popup.style.display = 'none'
 
-    // Zoek naar een video in de popup en pauzeer deze als die bestaat
     const video = image.querySelector('video')
     if (video) {
-      video.pause() // Pauzeer de video
-      video.currentTime = 0 // Reset de video naar het begin
+      video.pause()
+      video.currentTime = 0 
     }
 
-    // Verwijder ook de media-elementen (afbeelding of video) zodat het popup-content leeg is
     image.innerHTML = ''
   }
 
-  // Voeg event listeners toe aan de knoppen
   const buttons = document.querySelectorAll('#dayButtons button')
   buttons.forEach(button => {
     button.addEventListener('click', function () {
       const day = this.getAttribute('data-day')
-      console.log(`Dag ${day} is geklikt`)  // Log welke dag is geklikt
+      console.log(`Dag ${day} is geklikt`)  
       
-      buttons.forEach(btn => btn.classList.remove('activeBtn'))  // Verwijder de class van alle knoppen
+      buttons.forEach(btn => btn.classList.remove('activeBtn')) 
       updateNavBar(day)
-      addMarkers(day) // Voeg markers toe voor de geselecteerde dag
-      this.classList.add('activeBtn')  // Voeg de active class toe aan de geklikte knop
+      addMarkers(day) 
+      this.classList.add('activeBtn')  
     })
   })
 
@@ -552,7 +535,6 @@ showMap.addEventListener('click', ()=>{
   kalffMap.classList.toggle('visible')
 })
 
-  // Voeg markers toe voor de eerste dag
-  updateNavBar(1) // Start met dag 1
-  addMarkers(1) // Voeg markers toe voor dag 1
+  updateNavBar(1) 
+  addMarkers(1) 
 })

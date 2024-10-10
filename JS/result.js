@@ -1,31 +1,31 @@
-const chartElement = document.getElementById('observationsChart');
+const chartElement = document.getElementById('observationsChart')
 const vorstElement = document.getElementById('vorstChart')
-const feitBtn = document.querySelector('.btn-container button:first-of-type');
-const fabelBtn = document.querySelector('.btn-container button:nth-of-type(2)');
-const conclusionEl = document.querySelector('.conclusie-container');
-const fabelEl = document.querySelector('.fabel-container');
+const feitBtn = document.querySelector('.btn-container button:first-of-type')
+const fabelBtn = document.querySelector('.btn-container button:nth-of-type(2)')
+const conclusionEl = document.querySelector('.conclusie-container')
+const fabelEl = document.querySelector('.fabel-container')
 
 feitBtn.addEventListener('click', () => {
-  fabelEl.classList.remove('show');
+  fabelEl.classList.remove('show')
   
-  conclusionEl.classList.add('show');
+  conclusionEl.classList.add('show')
   conclusionEl.scrollIntoView({
     behavior: 'smooth'
-  });
-});
+  })
+})
 
 fabelBtn.addEventListener('click', () => {
-  conclusionEl.classList.remove('show');
+  conclusionEl.classList.remove('show')
   
-  fabelEl.classList.add('show');
+  fabelEl.classList.add('show')
   fabelEl.scrollIntoView({
     behavior: 'smooth'
-  });
-});
+  })
+})
 
 
 if (chartElement) {
-  const obsCtx = chartElement.getContext('2d');
+  const obsCtx = chartElement.getContext('2d')
   const observationsChart = new Chart(obsCtx, {
     type: 'line',
     data: {

@@ -4,7 +4,7 @@ const instagramPostsData = [
   2, 3, 1, 3, 0, 0, 3,
   2, 5, 5, 3, 3, 3, 4, 5,
   4, 9, 5, 6, 4, 12, 4, 1
-];
+]
 
 const instagramPhotos = [
   ['./IMG/insta-posts/MEI-1A.jpg'], // 1 mei
@@ -38,11 +38,10 @@ const instagramPhotos = [
   ['./IMG/insta-posts/MEI-29A.jpg', './IMG/insta-posts/MEI-29B.jpg', './IMG/insta-posts/MEI-29C.jpg', './IMG/insta-posts/MEI-29D.jpg', './IMG/insta-posts/MEI-29E.jpg'], // 22 mei
   ['./IMG/insta-posts/MEI-30A.jpg','./IMG/insta-posts/MEI-30B.jpg','./IMG/insta-posts/MEI-30C.jpg','./IMG/insta-posts/MEI-30D.jpg', ], // 30 mei
   ['./IMG/insta-posts/MEI-31A.jpg']
-];
+]
 
-const ctxInsta = document.getElementById('myChartInsta').getContext('2d');
+const ctxInsta = document.getElementById('myChartInsta').getContext('2d')
 
-// Grafiek voor Instagram Posts
 const myChartInsta = new Chart(ctxInsta, {
   type: 'bar',
   data: {
@@ -75,62 +74,53 @@ const myChartInsta = new Chart(ctxInsta, {
         },
       },
     },
-    // Hier voeg je de hover functionaliteit toe
     hover: {
       onHover: function (event, activeElements) {
         if (activeElements.length) {
-          const hoveredIndex = activeElements[0].index;
-          // Pas opacity aan van alle staven behalve de gehighlighte
+          const hoveredIndex = activeElements[0].index
           myChartInsta.data.datasets[0].backgroundColor = myChartInsta.data.datasets[0].data.map((_, index) => {
-            return index === hoveredIndex ? '#beff6f87' : 'rgba(190, 255, 111, 0.2)'; // Hovered: normale kleur, overig: lage opacity
-          });
+            return index === hoveredIndex ? '#beff6f87' : 'rgba(190, 255, 111, 0.2)' // Hovered: normale kleur, overig: lage opacity
+          })
         } else {
-          // Reset kleuren wanneer er niet over een staaf gehoverd wordt
-          myChartInsta.data.datasets[0].backgroundColor = '#beff6f87'; // Reset naar standaard kleur
+          myChartInsta.data.datasets[0].backgroundColor = '#beff6f87' // Reset naar standaard kleur
         }
-        myChartInsta.update(); // Grafiek updaten
+        myChartInsta.update() // Grafiek updaten
       }
     }
   },
-});
+})
 
-// Interactiviteit toevoegen voor de Instagram Posts grafiek
 myChartInsta.canvas.addEventListener('mousemove', function (event) {
   const activePoints = myChartInsta.getElementsAtEventForMode(event, 'nearest', {
     intersect: false
-  }, true);
+  }, true)
   if (activePoints.length) {
-    const hoveredIndex = activePoints[0].index; // Het index van de aangeklikte staaf
-    displayPhotos(hoveredIndex + 1); // Voeg +1 toe voor de juiste dag
+    const hoveredIndex = activePoints[0].index // Het index van de aangeklikte staaf
+    displayPhotos(hoveredIndex + 1) // Voeg +1 toe voor de juiste dag
   }
-});
+})
 
-// Foto's van de geselecteerde dag weergeven
 function displayPhotos(day) {
-  const photoContainer = document.getElementById('photoContainer');
-  photoContainer.innerHTML = ''; // Maak de container leeg
+  const photoContainer = document.getElementById('photoContainer')
+  photoContainer.innerHTML = '' // Maak de container leeg
 
-  // Foto's voor de geselecteerde dag weergeven
-  const photosForDay = instagramPhotos[day - 1]; // Foto's gebaseerd op Instagram data
+  const photosForDay = instagramPhotos[day - 1] // Foto's gebaseerd op Instagram data
   for (let i = 0; i < photosForDay.length; i++) {
-    const photo = document.createElement('div');
-    photo.className = 'photo';
+    const photo = document.createElement('div')
+    photo.className = 'photo'
 
-    // Laad de echte afbeelding uit de insta-posts map
-    photo.innerHTML = `<img src="${photosForDay[i]}" alt="Foto ${i + 1}">`;
-    photoContainer.appendChild(photo);
+    photo.innerHTML = `<img src="${photosForDay[i]}" alt="Foto ${i + 1}">`
+    photoContainer.appendChild(photo)
   }
 }
 
-// Highlight de eerste dag bij het laden van de grafiek
 function highlightFirstBar() {
-  const hoveredIndex = 0; // Index voor 1 mei
+  const hoveredIndex = 0 // Index voor 1 mei
   myChartInsta.data.datasets[0].backgroundColor = myChartInsta.data.datasets[0].data.map((_, index) => {
-    return index === hoveredIndex ? '#beff6f87' : 'rgba(190, 255, 111, 0.2)';
-  });
-  myChartInsta.update(); // Grafiek updaten
+    return index === hoveredIndex ? '#beff6f87' : 'rgba(190, 255, 111, 0.2)'
+  })
+  myChartInsta.update() // Grafiek updaten
 }
 
-// Toon foto's voor de eerste dag en highlight de eerste staaf
-displayPhotos(1);
-highlightFirstBar();
+displayPhotos(1)
+highlightFirstBar()

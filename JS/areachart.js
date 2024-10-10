@@ -1,4 +1,4 @@
-const ctx = document.getElementById('waarnemingenAreaChart').getContext('2d');
+const ctx = document.getElementById('waarnemingenAreaChart').getContext('2d')
 
 const data = {
     labels: ['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'],
@@ -10,7 +10,7 @@ const data = {
         borderWidth: 2,
         fill: true // Dit zorgt ervoor dat het gebied wordt gevuld
     }]
-};
+}
 
 const config = {
     type: 'line', // Type 'line' met fill voor area chart
@@ -54,6 +54,6 @@ const config = {
             }
         }
     },
-};
+}
 
-new Chart(ctx, config);
+new Chart(ctx, config)

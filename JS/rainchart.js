@@ -6,7 +6,7 @@ const labels = [
   '21/05', '22/05', '23/05', '24/05', '25/05',
   '26/05', '27/05', '28/05', '29/05', '30/05',
   '31/05'
-];
+]
 
 const temperatuurData = [
   19, 18, 11, 11, 12,
@@ -16,7 +16,7 @@ const temperatuurData = [
   17, 15, 15, 14, 15,
   15, 14, 14, 14, 14,
   15
-];
+]
 
 const neerslagData = [
   20, 15, 4, 5, null,
@@ -26,9 +26,9 @@ const neerslagData = [
   23, 4, null, 7, 3,
   7, 6, 11, 16, null,
   3
-];
+]
 
-const neerslagDataClean = neerslagData.map((value) => value === null ? 0 : value);
+const neerslagDataClean = neerslagData.map((value) => value === null ? 0 : value)
 
 // configRainuratie van de grafiek
 const configRain = {
@@ -117,10 +117,10 @@ const configRain = {
           }
       }
   }
-};
+}
 
 // Creëer de grafiek
 const myChart = new Chart(
   document.getElementById('myrainChart'),
   configRain
-);
+)

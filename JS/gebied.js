@@ -1,15 +1,14 @@
-const sidebar = document.getElementById('sidebar');
-const arrow = document.querySelector('.arrow');
+const sidebar = document.getElementById('sidebar')
+const arrow = document.querySelector('.arrow')
 const legend = document.querySelector('.legend')
 
 arrow.addEventListener('click', () => {
-  sidebar.classList.toggle('hidden');
+  sidebar.classList.toggle('hidden')
   legend.classList.toggle('hide')
-  arrow.innerHTML = sidebar.classList.contains('hidden') ? '<i class="fa-solid fa-arrow-right"></i>' : '<i class="fa-solid fa-arrow-left"></i>';
-});
+  arrow.innerHTML = sidebar.classList.contains('hidden') ? '<i class="fa-solid fa-arrow-right"></i>' : '<i class="fa-solid fa-arrow-left"></i>'
+})
 
-// Coördinaten van slakken per dag
-// Coördinaten van slakken per dag (bijgewerkt)
+
 const coordinatesPerDay = {
   "2024-05-01": [
     [53.1635, 6.3598, "Groningen, Groningen"],
@@ -170,41 +169,39 @@ const coordinatesPerDay = {
     [51.8178, 5.9336], [51.8177, 5.9092], [51.8912, 4.0488], [51.6968561, 5.6010834],
     [50.7792, 5.8593]
   ]
-};
+}
 
 function getLocationDescription(lat, lon) {
-  const tolerance = 0.05; 
+  const tolerance = 0.05 
   for (const [day, locations] of Object.entries(coordinatesPerDay)) {
     for (const [storedLat, storedLon, locationDescription] of locations) {
       if (
         Math.abs(lat - storedLat) < tolerance &&
         Math.abs(lon - storedLon) < tolerance
       ) {
-        return locationDescription;
+        return locationDescription
       }
     }
   }
-  return "Onbekende locatie"; // Als de locatie niet in de lijst staat
+  return "Onbekende locatie" 
 }
 
 function printLocationsForDay(day) {
-  const locations = coordinatesPerDay[day];
+  const locations = coordinatesPerDay[day]
   if (!locations) {
-    console.log("Geen locaties gevonden voor deze dag.");
-    return;
+    console.log("Geen locaties gevonden voor deze dag.")
+    return
   }
 
-  console.log(`Locaties voor ${day}:`);
+  console.log(`Locaties voor ${day}:`)
   locations.forEach(([lat, lon, description]) => {
-    console.log(`- [${lat}, ${lon}]: ${description}`);
-  });
+    console.log(`- [${lat}, ${lon}]: ${description}`)
+  })
 }
 
-// Roep de functie op voor een specifieke dag
-printLocationsForDay("2024-05-01");
+printLocationsForDay("2024-05-01")
 
 
-// Regenval per dag (in mm)
 const rainfallPerDay = {
   "2024-05-01": 2, "2024-05-02": 3, "2024-05-03": 5, "2024-05-04": 12,
   "2024-05-05": 0, "2024-05-06": 7, "2024-05-07": 1, "2024-05-08": 8,
@@ -214,151 +211,137 @@ const rainfallPerDay = {
   "2024-05-21": 4, "2024-05-22": 12, "2024-05-23": 7, "2024-05-24": 0,
   "2024-05-25": 1, "2024-05-26": 2, "2024-05-27": 3, "2024-05-28": 4,
   "2024-05-29": 6, "2024-05-30": 8, "2024-05-31": 0
-};
+}
 
-const showBtn = document.getElementById('showSnails');
+const showBtn = document.getElementById('showSnails')
 
-showBtn.addEventListener('click', showAllSnails);
+showBtn.addEventListener('click', showAllSnails)
 
-var map = L.map('map').setView([52.374, 4.8897], 8); // Startpositie bij Amsterdam
+var map = L.map('map').setView([52.374, 4.8897], 8) // Startpositie bij Amsterdam
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
   minZoom: 7,
   maxZoom: 15,
   attribution: '© OpenStreetMap contributors, © CARTO'
-}).addTo(map);
+}).addTo(map)
 
-// Beperk de weergave tot Nederland met de volgende bounds
 var bounds = L.latLngBounds([
   [50.5, 3.0],  // Zuidwesten (onderaan)
   [53.6, 7.2]   // Noordoosten (bovenaan)
-]);
-map.setMaxBounds(bounds);
+])
+map.setMaxBounds(bounds)
 map.on('drag', function () {
-  map.panInsideBounds(bounds, { animate: false });
-});
+  map.panInsideBounds(bounds, { animate: false })
+})
 
-// Genereer de kalender voor mei 2024
-const daysInMonth = 31;
-const startDay = new Date(2024, 4, 1).getDay(); // 0 is zondag
-const calendar = document.getElementById('calendar');
+const daysInMonth = 31
+const startDay = new Date(2024, 4, 1).getDay() 
+const calendar = document.getElementById('calendar')
 
 for (let i = 0; i < startDay; i++) {
-  const emptyCell = document.createElement('div');
-  emptyCell.className = 'day';
-  calendar.appendChild(emptyCell);
+  const emptyCell = document.createElement('div')
+  emptyCell.className = 'day'
+  calendar.appendChild(emptyCell)
 }
 
-let selectedDayCell = null; // Houdt de geselecteerde dag bij
+let selectedDayCell = null // Houdt de geselecteerde dag bij
 
-// Voorloop om de dagen van de maand toe te voegen
 for (let day = 1; day <= daysInMonth; day++) {
-  const dayCell = document.createElement('div');
-  dayCell.className = 'day';
-  dayCell.textContent = day;
+  const dayCell = document.createElement('div')
+  dayCell.className = 'day'
+  dayCell.textContent = day
 
-  // Pas de achtergrondkleur aan op basis van de regenval
-  const dateKey = `2024-05-${day.toString().padStart(2, '0')}`;
-  const rainfall = rainfallPerDay[dateKey];
+  const dateKey = `2024-05-${day.toString().padStart(2, '0')}`
+  const rainfall = rainfallPerDay[dateKey]
 
   if (rainfall > 10) {
-    dayCell.style.backgroundColor = 'darkblue'; // Donkerblauw voor veel regen
-    dayCell.style.color = 'white'; // Donkerblauw voor veel regen
+    dayCell.style.backgroundColor = 'darkblue' 
+    dayCell.style.color = 'white' 
   } else if (rainfall > 5) {
-    dayCell.style.backgroundColor = 'blue'; // Blauw voor gemiddelde regen
-    dayCell.style.color = 'white'; // Donkerblauw voor veel regen
+    dayCell.style.backgroundColor = 'blue' 
+    dayCell.style.color = 'white' 
   } else {
-    dayCell.style.backgroundColor = '#9ac2ce'; // Lichtblauw voor weinig regen
-    dayCell.style.color = 'black'; // Zwart voor weinig regen
+    dayCell.style.backgroundColor = '#9ac2ce' 
+    dayCell.style.color = 'black' 
   }
 
-  // Voeg een klik event toe
   dayCell.onclick = function () {
-    // Reset de achtergrondkleur en tekstkleur van de vorige geselecteerde dag
     if (selectedDayCell) {
-      const previousDateKey = `2024-05-${selectedDayCell.textContent.padStart(2, '0')}`;
-      const previousRainfall = rainfallPerDay[previousDateKey];
+      const previousDateKey = `2024-05-${selectedDayCell.textContent.padStart(2, '0')}`
+      const previousRainfall = rainfallPerDay[previousDateKey]
 
-      // Reset de achtergrondkleur en tekstkleur op basis van de regenval
       if (previousRainfall > 10) {
-          selectedDayCell.style.backgroundColor = 'darkblue'; // Donkerblauw voor veel regen
-          selectedDayCell.style.color = 'white'; // Tekstkleur reset
+          selectedDayCell.style.backgroundColor = 'darkblue' 
+          selectedDayCell.style.color = 'white' 
       } else if (previousRainfall > 5) {
-          selectedDayCell.style.backgroundColor = 'blue'; // Blauw voor gemiddelde regen
-          selectedDayCell.style.color = 'white'; // Tekstkleur reset
+          selectedDayCell.style.backgroundColor = 'blue' 
+          selectedDayCell.style.color = 'white' 
       } else {
-          selectedDayCell.style.backgroundColor = '#9ac2ce'; // Lichtblauw voor weinig regen
-          selectedDayCell.style.color = 'black'; // Zwart voor weinig regen
+          selectedDayCell.style.backgroundColor = '#9ac2ce' 
+          selectedDayCell.style.color = 'black' 
       }
     }
 
-    // Stel de nieuwe geselecteerde dag in
-    selectedDayCell = dayCell;
-    selectedDayCell.style.backgroundColor = 'rgb(0, 43, 0)'; // Stel de achtergrondkleur in op donker groen
-    selectedDayCell.style.color = 'white'; // Stel de tekstkleur in op wit
+    selectedDayCell = dayCell
+    selectedDayCell.style.backgroundColor = 'rgb(0, 43, 0)' // Stel de achtergrondkleur in op donker groen
+    selectedDayCell.style.color = 'white' // Stel de tekstkleur in op wit
 
-    showSnailsBasedOnRain(day);
-    updateSnailCount(day); // Update het aantal slakken voor de geselecteerde dag
-  };
+    showSnailsBasedOnRain(day)
+    updateSnailCount(day) // Update het aantal slakken voor de geselecteerde dag
+  }
 
-  calendar.appendChild(dayCell); // Voeg de dag toe aan de kalender
+  calendar.appendChild(dayCell) 
 }
 
 
 function showAllSnails() {
-  // Verwijder bestaande slakken
   map.eachLayer(function (layer) {
     if (layer instanceof L.Marker) {
-      map.removeLayer(layer);
+      map.removeLayer(layer)
     }
-  });
+  })
 
-  let totalSnails = 0; // Telling voor het totaal aantal slakken
+  let totalSnails = 0 
 
-  // Loop door alle dagen van mei 2024 en voeg de slakken toe
   Object.keys(coordinatesPerDay).forEach(dateKey => {
-    const snailCoordinates = coordinatesPerDay[dateKey];
+    const snailCoordinates = coordinatesPerDay[dateKey]
     if (snailCoordinates) {
       snailCoordinates.forEach(coords => {
         const marker = L.marker(coords, {
           icon: L.divIcon({
             className: 'snail-icon',
-            html: '<img src="./IMG/red-slug.svg" alt="Slak" class="snail-icon">', // Hier je SVG gebruiken
+            html: '<img src="./IMG/red-slug.svg" alt="Slak" class="snail-icon">', 
             iconSize: [30, 30], // Grootte van de slak
             iconAnchor: [15, 15] // Centreringspunt
           })
-        });
+        })
 
-        // Voeg een pop-up toe met de coördinaten van de slak
-        marker.bindPopup(`Locatie: (${coords[0].toFixed(4)}, ${coords[1].toFixed(4)})<br>Aantal slakken: 1`);
+        marker.bindPopup(`Locatie: (${coords[0].toFixed(4)}, ${coords[1].toFixed(4)})<br>Aantal slakken: 1`)
 
-        marker.addTo(map);
+        marker.addTo(map)
         
-        totalSnails++; // Verhoog het totaal aantal slakken met 1
-      });
+        totalSnails++ 
+      })
     }
-  });
+  })
 
-  // Update het aantal slakken in de interface
-  document.getElementById('snailCount').textContent = `Het aantal slakken: ${totalSnails}`;
+  document.getElementById('snailCount').textContent = `Het aantal slakken: ${totalSnails}`
 }
 
 function showSnailsBasedOnRain(day) {
-  // Verwijder bestaande slakken
   map.eachLayer(function (layer) {
     if (layer instanceof L.Marker) {
-      map.removeLayer(layer);
+      map.removeLayer(layer)
     }
-  });
+  })
 
-  const dateKey = `2024-05-${day.toString().padStart(2, '0')}`;
-  const snailCoordinates = coordinatesPerDay[dateKey];
+  const dateKey = `2024-05-${day.toString().padStart(2, '0')}`
+  const snailCoordinates = coordinatesPerDay[dateKey]
 
   if (snailCoordinates) {
     snailCoordinates.forEach(coords => {
-      const [lat, lon] = coords;
+      const [lat, lon] = coords
 
-      // Voeg de slak toe
       const marker = L.marker(coords, {
         icon: L.divIcon({
           className: 'snail-icon',
@@ -366,29 +349,26 @@ function showSnailsBasedOnRain(day) {
           iconSize: [30, 30],
           iconAnchor: [15, 15]
         })
-      }).addTo(map);
+      }).addTo(map)
 
-  // Vraag locatie naam op met reverse geocoding
-  fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`)
+      fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`)
     .then(response => response.json())
     .then(data => {
-      const locationName = data.display_name;
+      const locationName = data.display_name
 
-      // Voeg een popup toe met locatie naam
-      marker.bindPopup(`<b>Locatie:</b> ${locationName}<br><b>Slakken aantal:</b> 1`).openPopup();
+      marker.bindPopup(`<b>Locatie:</b> ${locationName}<br><b>Slakken aantal:</b> 1`).openPopup()
     })
-    .catch(error => console.error('Error:', error));
-});
+    .catch(error => console.error('Error:', error))
+})
 }
 }
 
-// Functie om het aantal slakken per dag bij te werken
 function updateSnailCount(day) {
-const dateKey = `2024-05-${day.toString().padStart(2, '0')}`;
+const dateKey = `2024-05-${day.toString().padStart(2, '0')}`
 if (dateKey in coordinatesPerDay) {
-const count = coordinatesPerDay[dateKey].length; // Aantal slakken voor die dag
-document.getElementById('snailCount').textContent = `Het aantal slakken: ${count}`;
+const count = coordinatesPerDay[dateKey].length // Aantal slakken voor die dag
+document.getElementById('snailCount').textContent = `Het aantal slakken: ${count}`
 } else {
-document.getElementById('snailCount').textContent = `Het aantal slakken: 0`;
+document.getElementById('snailCount').textContent = `Het aantal slakken: 0`
 }
 }
