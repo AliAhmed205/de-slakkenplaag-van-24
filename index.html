@@ -18,7 +18,7 @@
 <body>
   <main>
     <h1>Ali Ahmed | Datavisualisatie 24-25 | Information Design</h1>
-    <section id="homepage" class="homepage">
+    <section id="homepage" class="homepage" aria-label="Homepage over de slakkenplaag van 2024">
       <h1>De 'slakkenplaag' van 2024</h1>
       <h2>Feit of Fabel?</h2>
       <p>In de lente van 2024 klaagden veel mensen in Nederland over een
@@ -27,25 +27,24 @@
         plaag, of slechts een tijdelijk gevolg van het
         natte weer?</p>
       <h3 class="mobileText">Laten we het mysterie oplossen!</h3>
-      <i id="arrowDown" class="fa-solid fa-arrow-down"></i>
-      <button id="startBtn"><i class="fa-solid fa-magnifying-glass"></i> Los het mysterie
-        op</button>
-      <div class="slug-container" style="--x:.67">
+      <i id="arrowDown" class="fa-solid fa-arrow-down" aria-label="Scroll naar beneden"></i>
+      <button id="startBtn" aria-label="Start het mysterie oplossen"><i class="fa-solid fa-magnifying-glass"></i> Los het mysterie op</button>
+      <div class="slug-container" style="--x:.67" aria-label="Afbeelding van slakken-regen">
         <img src="./IMG/slug.png" alt="slakken-regen" />
       </div>
-      <section class="plant-corner">
+      <section class="plant-corner" aria-label="Afbeeldingen van bladeren">
         <img class="blad" src="./IMG/leaves.png" alt="Bladeren">
         <img class="blad" src="./IMG/leaves.png" alt="Bladeren">
         <img class="blad" src="./IMG/leaves.png" alt="Bladeren">
         <img class="blad" src="./IMG/leaves.png" alt="Bladeren">
       </section>
-      <section class="rain-background"></section>
+      <section class="rain-background" aria-label="Achtergrond afbeelding van regen"></section>
     </section>
-    <section id="question" class="dashboard-container">
+    <section id="question" class="dashboard-container" aria-label="Dashboard met informatie over slakken in Nederland">
       <h1>Slakken in Nederland</h1>
       <div class="dashboard">
         <div class="dashboard-item item-1">
-          <svg id="Laag_1" data-name="Laag 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430.9 248.73">
+          <svg aria-label="slak-illustratie" id="Laag_1" data-name="Laag 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430.9 248.73">
             <path class="slak-icon"
               d="M361.29,120.47c1.49-9.9,2.81-19.83,4.52-29.69,1.73-9.93,3.92-19.78,5.78-29.7.6-3.22.62-6.55,1.24-9.76.46-2.36.88-5.17,2.4-6.75,1.23-1.28,4.29-1.78,6.09-1.22,1.25.39,2.09,3.11,2.47,4.92.27,1.27-.08,3.28-.95,4.09-9.86,9.12-7.23,21.78-9.03,32.97-1.71,10.62-1.36,21.57-1.92,32.37.78.06,1.55.13,2.33.19.29-5.24.59-10.48.87-15.52,7,5.8,14.06,10.83,20.03,16.94,3.2,3.28,4.43,8.44,6.7,12.67,2.06,3.83,3.59,8.35,6.65,11.15,4.98,4.56,11.12,7.82,16.54,11.93,2.27,1.72,3.95,4.22,5.9,6.36-.59.8-1.19,1.6-1.78,2.4-2.64-1.58-5.43-2.96-7.88-4.79-4.88-3.67-9.38-7.87-14.41-11.32-4.4-3.03-8.06-1.2-11.1,2.88-4.8,6.43-10.48,12.29-14.65,19.09-6,9.79-12.03,19.79-16.21,30.42-15.68,39.87-64.77,59.85-104.82,42.18-17.82-7.87-35.88-9.88-54.96-5.31-14.34,3.44-28.68,3.56-43.49.15-8.83-2.03-19.36-1.51-27.95,1.36-15.71,5.25-30.46,4.5-45.26-1.5-10.13-4.11-20.35-6.29-31.34-5.59-9.74.62-18.75-2.42-27.05-7.48-7.22-4.4-14.46-8.79-21.57-13.37-2.22-1.43-4.34-3.22-6.04-5.24-4.22-5.02-2.75-9.74,3.49-11.96.58-.21,1.19-.52,1.78-.5,16.59.72,29.83-8.6,44.15-14.68,2.65-1.13,5.3-2.38,8.08-3.1,7.8-2.02,14.4-2.03,21.33,4.54,15.52,14.71,33.85,22.12,55.51,14.17,10.94-4.01,18.21-12.46,24.99-21.48,1.19-1.59,4-3.45,5.53-3.07,16.85,4.17,33.72,1.29,50.57.59,26.56-1.09,52.21-7.66,78.01-13.23,6.77-1.46,12.71-4.01,13.82-12.08.12-.9.78-1.99,1.52-2.49,13.2-8.91,19.9-22.77,27.52-35.92.52-.89.78-2,1.46-2.71,9.97-10.41,10.04-23.16,9.47-36.44-.49-11.5.69-23.07.45-34.59-.13-6.24-1.7-12.44-2.56-18.67-.31-2.21-1.41-5-.48-6.52,1.51-2.48,4.38-4.13,6.67-6.14,1.42,2.61,4.7,6.03,3.97,7.71-5.8,13.34-.34,26.51-.21,39.71.08,8.04.53,16.08.82,24.12.08,2.06-.41,4.39.38,6.13,5.79,12.66,2.73,25.48,1.07,38.3-.13,1-.1,2.02-.15,3.04.56.16,1.13.31,1.69.47Z" />
             <path class="slak-icon"
@@ -57,13 +56,13 @@
             <path class="slak-icon"
               d="M87.29,71.67c.79,5.63,2.18,11.25,2.21,16.89.04,6.99-2.44,13.4-8.12,18.01-5.65,4.57-10.91,3.43-14.26-2.9-4.6-8.69-2.56-23.77,4.18-30.85,5.07-5.33,10.51-5.66,16.16-.98,0,0-.16-.16-.16-.16Z" />
           </svg>
-          <h1 id="counter">0</h1>
+          <h1 id="counter" aria-label="Aantal slaksoorten">0</h1>
           <h2>soorten</h2>
           <p>In Nederland hebben we ongeveer 140 slaksoorten</p>
         </div>
         <div class="dashboard-item item-2">
           <h2>Toename van de Slakkenpopulatie (1990 - 2024)</h2>
-          <canvas id="slakkenPopulatieChart" width="700" height="270"></canvas>
+          <canvas id="slakkenPopulatieChart" width="700" height="270" aria-label="Grafiek van de slakkenpopulatie"></canvas>
         </div>
         <div class="dashboard-item item-3">
           <h2>Geografische Spreiding</h2>
@@ -71,7 +70,7 @@
           <p>In nederland hebben 3 specifieke type slak, die dan weer
             allemaal in verschillende vormen, kleuren en
             soorten komen.</p>
-          <svg id="Background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1396.43 1653.82">
+          <svg aria-label="kaart van nederland met de 3 slakken families" id="Background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1396.43 1653.82">
             <defs>
               <style>
                 .cls-1 {
@@ -243,13 +242,13 @@
           <h3>Legenda</h3>
           <ul>
             <li>
-              <div></div>Zeeslak
+              <div aria-label="Zeeslak"></div>Zeeslak
             </li>
             <li>
-              <div></div>Landslak
+              <div aria-label="Landslak"></div>Landslak
             </li>
             <li>
-              <div></div>Luchtademendeslak
+              <div aria-label="Luchtademendeslak"></div>Luchtademendeslak
             </li>
           </ul>
         </div>
@@ -261,15 +260,15 @@
             in jouw tuin vinden waar ze zachten planten, maar soms
             gewassen van mensen eten.
           </p>
-          <i class="fa-solid fa-cloud-rain"></i>
-          <img src="./IMG/slak.png" alt="slak" class="slak-png">
-          <img src="./IMG/grass.png" alt="">
+          <i class="fa-solid fa-cloud-rain" aria-label="Symbool voor regen"></i>
+          <img src="./IMG/slak.png" alt="slak" class="slak-png" aria-label="Afbeelding van een slak">
+          <img src="./IMG/grass.png" alt="gras" aria-label="Afbeelding van gras">
         </div>
         <div class="dashboard-item item-6">
         </div>
       </div>
     </section>
-    <section class="regenval-container">
+    <section class="regenval-container" aria-label="Informatie over regenval en slakken">
       <section class="regenval-text">
         <h2>Wat weten we nu?</h2>
         <p>Slakken komen het liefst tevoorschijn als het nat en vochtig
@@ -284,25 +283,25 @@
           weer.</p>
       </section>
       <div class="raining">
-        <canvas id="myrainChart"></canvas>
+        <canvas id="myrainChart" aria-label="Grafiek van de regenval in mei"></canvas>
       </div>
     </section>
-    <section class="social-media-container">
+    <section class="social-media-container" aria-label="Informatie over social media en slakken">
       <h2>Resultaat op social media</h2>
       <p>Op <b>Instagram</b> zijn berichten verschenen over de regen, waarbij veel mensen foto's van slakken hebben
         gedeeld met in de beschrijving <b>#slakkenplaag</b>. Regen zorgt namelijk voor ideale omstandigheden voor slakken, wat resulteert in meer activiteit, zoals
         te zien is in de posts. <strong>Beweeg met je muis over de staven en onthoud welke slak je het vaakst
           ziet</strong>.</p>
-      <div id="photoContainer"></div>
+      <div id="photoContainer" aria-label="Container voor foto's van slakken"></div>
       <div class="chart-container">
-        <canvas id="myChartInsta" width="380" height="60"></canvas>
+        <canvas id="myChartInsta" width="380" height="60" aria-label="Grafiek van Instagram posts over slakken"></canvas>
       </div>
     </section>
-    <section id="relation-id" class="relational-container">
+    <section id="relation-id" class="relational-container" aria-label="Informatie over slakkensoorten op Instagram">
       <div class="relation-img">
         <h2>Wat valt op aan de slakkensoort op de Instagram-foto's met
           de hashtag #slakkenplaag?</h2>
-        <img src="./IMG/relational-diagram.png" alt="">
+        <img src="./IMG/relational-diagram.png" alt="Relational diagram van slakken" aria-label="Diagram van slakkensoorten">
       </div>
       <div class="relation-about">
         <h2>Arion Vulgaris</h2>
@@ -311,7 +310,7 @@
           slijmnaakslak die veel voorkomt in delen van Europa, met een
           concentratie in Zuid-Europa.
         </p>
-        <img src="./IMG/slug-transparent.png" alt="Spaanse Naakteslak">
+        <img src="./IMG/slug-transparent.png" alt="Spaanse Naakteslak" aria-label="Afbeelding van de Spaanse naakteslak">
         <p>Aan de hand van de foto's kan er vastgesteld worden dat
           spaanse wegslak het meest voorkwam tijdens in Mei.
           Hoe zit het met de maanden ervoor, of juist de maanden erna.
@@ -320,51 +319,48 @@
           tot Oktober 2024.
         </p>
         <div class="areachart">
-          <canvas id="waarnemingenAreaChart"></canvas>
+          <canvas id="waarnemingenAreaChart" aria-label="Grafiek van waarnemingen van slakken per maand"></canvas>
         </div>
       </div>
     </section>
-    <section class="map-container">
-      <button type="button" class="btnDirection" id="up-button"><i class="fa-regular fa-circle-down"></i></button>
+    <section class="map-container" aria-label="Kaart met slakkendata">
+      <button type="button" class="btnDirection" id="up-button" aria-label="Scroll omhoog"><i class="fa-regular fa-circle-down"></i></button>
       
       <div id="sidebar">
-        <button type="button" class="arrow"><i class="fa-solid fa-arrow-right"></i></button>
+        <button type="button" class="arrow" aria-label="Ga naar de volgende sectie"><i class="fa-solid fa-arrow-right"></i></button>
         <h1>Hoeveel spaanse wegslak bevindingen werden er dagelijks in
           de maand mei aangetroffen na regen?</h1>
-        <div id="calendar"></div>
-        <!-- Legenda -->
-        <h3 id="snailCount">Het aantal slakken: 0</h3>
+        <div id="calendar" aria-label="Kalender van slakkenwaarnemingen"></div>
+        <h3 id="snailCount" aria-label="Aantal waargenomen slakken">Het aantal slakken: 0</h3>
       </div>
       <div class="legend">
         <h2>Agenda-legenda</h2>
-        <div class="item">
+        <div class="item" aria-label="Donkerblauwe iconen voor veel regen"> 
           <span class="icon darkblue"></span>
           Donkerblauw: Veel regen (> 10 mm)
         </div>
-        <div class="item">
+        <div class="item" aria-label="Blauwe iconen voor gemiddelde regen"> 
           <span class="icon blue"></span>
           Blauw: Gemiddelde regen (5-10 mm)
         </div>
-        <div class="item">
+        <div class="item" aria-label="Lichtblauwe iconen voor weinig regen"> 
           <span class="icon lightblue"></span>
           Lichtblauw: Weinig regen (0-5 mm)
         </div>
-        <div class="item">
+        <div class="item" aria-label="Slakken iconen"> 
           <span class="icon slug-icon">🐌</span>
           Slakken: Elke 🐌 staat voor één waargenomen rode wegslak.
         </div>
-        <button id="showSnails">Toon alle slakken</button>
+        <button id="showSnails" aria-label="Toon alle slakken">Toon alle slakken</button>
         <div class="info-text">
-          Gebaseerd op waarnemingen van rode wegslakken op <a href="https://waarneming.nl"
-            target="_blank">waarneming.nl</a>.
+          Gebaseerd op waarnemingen van rode wegslakken op <a href="https://waarneming.nl" target="_blank" aria-label="Ga naar waarneming.nl">waarneming.nl</a>.
         </div>
       </div>
       
-      
-      <button type="button" class="btnDirection" id="down-button"><i class="fa-regular fa-circle-down"></i></button>
-      <div id="map"></div>
+      <button type="button" class="btnDirection" id="down-button" aria-label="Scroll omlaag"><i class="fa-regular fa-circle-down"></i></button>
+      <div id="map" aria-label="Interactieve kaart van slakkenwaarnemingen"></div>
     </section>
-    <section id="box-id" class="dekalf-container">
+    <section id="box-id" class="dekalf-container" aria-label="Informatie over Schooltuin De Kalff">
       <article class="about-kalf">
         <h2>Waar in mijn buurt waren de gevolgen van de slakkenplaag het
           meest zichtbaar tijdens Mei?</h2>
@@ -375,29 +371,29 @@
           dan honderd slakken en startten hun zoektocht al
           om 07:30 uur om de gewassen en tuintjes te beschermen.</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/2pT3ffb_Um8?si=oR4BYCtFY0FUIf3b"
-          title="YouTube video player" frameborder="0" umute
+          title="YouTube video player" frameborder="0" mute
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          referrerpolicy="strict-origin-when-cross-origin" aria-label="YouTube video over de slakkenplaag"></iframe>
         <h2>Hoe gaat het er nu aan toe?</h2>
         <p>Sinds 26 september is de schooltuin in totaal 10 dagen
           bezocht om te observeren of er veranderingen zijn
           opgetreden. Klik op een gekleurd punt voor details.</p>
-        <button>Bekijk de kaart</button>
+        <button aria-label="Bekijk de kaart">Bekijk de kaart</button>
       </article>
-      <div class="kaart-container">
+      <div class="kaart-container" aria-label="Kaart met huidige situatie in Schooltuin De Kalff">
         <h2>Wat is de huidige situatie in Schooltuin De Kalff tijdens de
           herfst na de eerdere slakkenplaag?</h2>
-        <div id="dayButtons">
-          <button type="button" data-day="1">Dag 1</button>
-          <button type="button" data-day="2">Dag 2</button>
-          <button type="button" data-day="3">Dag 3</button>
-          <button type="button" data-day="4">Dag 4</button>
-          <button type="button" data-day="5">Dag 5</button>
-          <button type="button" data-day="6">Dag 6</button>
-          <button type="button" data-day="7">Dag 7</button>
-          <button type="button" data-day="8">Dag 8</button>
+        <div id="dayButtons" aria-label="Knoppen voor dagen">
+          <button type="button" data-day="1" aria-label="Bekijk gegevens voor Dag 1">Dag 1</button>
+          <button type="button" data-day="2" aria-label="Bekijk gegevens voor Dag 2">Dag 2</button>
+          <button type="button" data-day="3" aria-label="Bekijk gegevens voor Dag 3">Dag 3</button>
+          <button type="button" data-day="4" aria-label="Bekijk gegevens voor Dag 4">Dag 4</button>
+          <button type="button" data-day="5" aria-label="Bekijk gegevens voor Dag 5">Dag 5</button>
+          <button type="button" data-day="6" aria-label="Bekijk gegevens voor Dag 6">Dag 6</button>
+          <button type="button" data-day="7" aria-label="Bekijk gegevens voor Dag 7">Dag 7</button>
+          <button type="button" data-day="8" aria-label="Bekijk gegevens voor Dag 8">Dag 8</button>
         </div>
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Navigatie met gegevens over slakken">
           <span id="datum"><i class="fa-solid fa-calendar-days"></i>
             Datum: 26/09/2024</span>
           <span id="temperature"><i class="fa-solid fa-temperature-full"></i>
@@ -407,10 +403,10 @@
           <span id="slugs"><i class="fa-solid fa-magnifying-glass"></i> Aantal
             slakken: 3</span>
         </nav>
-        <div class="kalf-container" id="kalfContainer">
+        <div class="kalf-container" id="kalfContainer" aria-label="Container voor slakkenwaarnemingen">
           <!-- Markers worden hier dynamisch toegevoegd via JavaScript -->
         </div>
-        <div class="kalf-legenda">
+        <div class="kalf-legenda" aria-label="Legende voor slakkenwaarnemingen">
           <h2>Legenda</h2>
           <ul>
             <li>Bevindingen</li>
@@ -419,38 +415,37 @@
           </ul>
         </div>
       </div>
-      <div id="popup" class="popup">
-        <span class="close" id="closePopup">&times;</span>
+      <div id="popup" class="popup" aria-label="Pop-up voor details over slakkenwaarnemingen">
+        <span class="close" id="closePopup" aria-label="Sluit pop-up">&times;</span>
         <div id="popup-content">
           <h2 id="popup-title"></h2>
-          <div id="popup-image"></div>
-          <!-- Dit wordt nu gebruikt voor zowel afbeeldingen als video's -->
+          <div id="popup-image" aria-label="Afbeelding in pop-up"></div>
           <p id="popup-description"></p>
         </div>
       </div>
     </section>
-    <section class="choice-container">
-      <img src="./IMG/question-mark.svg" alt="question-mark">
-      <h1>Was de slakkenplaag dus toch wel een feit of fabel ?</h1>
+    <section class="choice-container" aria-label="Keuze tussen feit of fabel over de slakkenplaag">
+      <img src="./IMG/question-mark.svg" alt="vraagteken" aria-label="Afbeelding van een vraagteken">
+      <h1>Was de slakkenplaag dus toch wel een feit of fabel?</h1>
       <div class="btn-container">
-        <button type="button">Feit</button>
-        <button type="button">Fabel</button>
+        <button type="button" aria-label="Kies Feit">Feit</button>
+        <button type="button" aria-label="Kies Fabel">Fabel</button>
       </div>
     </section>
-    <section class="conclusie-container">
+    <section class="conclusie-container" aria-label="Conclusie over de slakkenplaag">
       <article>
         <h2><i class="fa-solid fa-check"></i> Feit</h2>
         <p>Tussen april en juli, vooral in <b>mei</b> en <b>juli</b>, zien we veel meer slakken door de regen en de
           zachte winters. In
           de winter slapen hun natuurlijke vijanden, zoals egels, waardoor slakken beter kunnen overleven en zich
           voortplanten. Hanneke Hietink vertelt hier meer over in de NOS-rapportage.</p>
-        <audio src="./AUDIO/waaromzijnerzoveelslakken.mp3" controls></audio>
+        <audio src="./AUDIO/waaromzijnerzoveelslakken.mp3" controls aria-label="Audio over slakkenpopulatie"></audio>
         <article class="comparison-container">
-          <canvas id="vorstChart" width="800" height="400"></canvas>
+          <canvas id="vorstChart" width="800" height="400" aria-label="Grafiek van vorstdata en slakkenpopulatie"></canvas>
         </article>
       </article>
     </section>
-    <section class="fabel-container">
+    <section class="fabel-container" aria-label="Uitleg waarom het een fabel is">
       <article>
         <h2><i class="fa-solid fa-x"></i> Fabel</h2>
         <p>Het is geen fabel. De slakkenpopulatie groeide in het voorjaar echt aanzienlijk door een combinatie van
@@ -459,15 +454,13 @@
           beter overleven en zich sneller kunnen voortplanten, wat leidt tot een grotere populatie. De invloed van
           klimaatverandering, zoals mildere winters, draagt verder bij aan dit fenomeen. Wetenschappelijk onderzoek en
           observaties ondersteunen deze verklaring.</p>
-        <audio src="./AUDIO/waaromzijnerzoveelslakken.mp3" controls></audio>
+        <audio src="./AUDIO/waaromzijnerzoveelslakken.mp3" controls aria-label="Audio over slakkenpopulatie"></audio>
         <article class="comparison-container">
-          <canvas id="observationsChart" width="800" height="400"></canvas>
+          <canvas id="observationsChart" width="800" height="400" aria-label="Grafiek van observaties van slakken"></canvas>
         </article>
       </article>
     </section>
   </main>
-  <footer>
-  </footer>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="./JS/gebied.js"></script>
   <script src="./JS/areachart.js"></script>
