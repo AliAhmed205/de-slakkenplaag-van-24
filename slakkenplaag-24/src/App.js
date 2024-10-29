@@ -1,5 +1,5 @@
 import React from 'react';
-import Homepage from './components/Homepage.js';
+import Homepage from './components/Homepage/Homepage.jsx';
 // import Question from './components/Question.js';
 // import RegenvalContainer from './components/RegenvalContainer.js';
 // import SocialMediaContainer from './components/SocialMediaContainer.js';
@@ -10,6 +10,8 @@ import Homepage from './components/Homepage.js';
 // import ConclusieContainer from './components/ConclusieContainer.js';
 // import FabelContainer from './components/FabelContainer.js';
 import './App.css';
+import './Homepage.css';
+
 
 
 function App() {
