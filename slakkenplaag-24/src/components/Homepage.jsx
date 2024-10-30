@@ -3,6 +3,15 @@ import React, { useEffect } from 'react';
 const Homepage = () => {
   useEffect(() => {
     const handleDOMContentLoaded = () => {
+
+      const startBtn = document.getElementById('startBtn');
+
+      startBtn.addEventListener('click', function (event) {
+        event.preventDefault() 
+        const targetSection = document.querySelector('#question')
+        targetSection.scrollIntoView({ behavior: 'smooth' })
+      })
+
       if (navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome')) {
         document.body.classList.add('safari-browser');
       }
@@ -12,7 +21,7 @@ const Homepage = () => {
         let slakImg = document.createElement("img");
         const homeSection = document.getElementsByClassName('homepage')[0];
 
-        slakImg.src = "/IMG/slug.png"; //
+        slakImg.src = "/IMG/slug.png"; 
         slak.appendChild(slakImg);
 
         let slakX = Math.random();
@@ -52,7 +61,6 @@ const Homepage = () => {
         plaag, of slechts een tijdelijk gevolg van het
         natte weer?
       </p>
-      <h3 className="mobileText">Laten we het mysterie oplossen!</h3>
       <i id="arrowDown" className="fa-solid fa-arrow-down" aria-label="Scroll naar beneden"></i>
       <button id="startBtn" aria-label="Start het mysterie oplossen">
         <i className="fa-solid fa-magnifying-glass"></i> Los het mysterie op
