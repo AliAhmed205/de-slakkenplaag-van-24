@@ -15,26 +15,26 @@ export function startCounter() {
     }
   }, 10);
 }
-let slakkenPopulatieChart; 
+
+let slakkenPopulatieChart;
 
 export function startSlakkenChartAnimation() {
-
-  if (slakkenPopulatieChart) {
-    slakkenPopulatieChart.destroy();
-  }
-
   const slakkenChartCanvas = document.getElementById('slakkenPopulatieChart').getContext('2d');
   const jaren = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024];
   const populatie = [100, 150, 180, 250, 300, 400, 550, 700];
 
-  // Maak een nieuwe grafiek
+  if (slakkenPopulatieChart) {
+    slakkenPopulatieChart.destroy(); 
+  }
+
+  // Create a new chart
   slakkenPopulatieChart = new Chart(slakkenChartCanvas, {
     type: 'bar',
     data: {
       labels: jaren,
       datasets: [{
         label: 'Slakkenpopulatie',
-        data: [], 
+        data: [], // Initialize with an empty array
         borderColor: '#fdff6f',
         backgroundColor: '#fdff6f84',
         borderWidth: 2,
@@ -43,7 +43,7 @@ export function startSlakkenChartAnimation() {
     options: {
       scales: {
         x: {
-          type: 'category', 
+          type: 'category',
           title: {
             display: true,
             text: 'Jaar',
@@ -82,12 +82,12 @@ export function startSlakkenChartAnimation() {
         slakkenPopulatieChart.data.datasets[0].data.push(populatie[i]);
         slakkenPopulatieChart.update();
         i++;
-        setTimeout(addDataPoint, 100); 
+        setTimeout(addDataPoint, 100);
       }
     }
     addDataPoint();
   }
 
+  slakkenPopulatieChart.data.datasets[0].data = []; 
   updateChartStepByStep();
 }
-
