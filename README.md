@@ -18,3 +18,8 @@
 <img src="https://github.com/user-attachments/assets/bf747cc3-d724-47d4-a974-8f5192c440bf" alt="External Data">
 <p>All my external data collections come from Waarneming.nl and KNMI. On <a href="https://waarneming.nl/">waarneming.nl</a>, I specifically searched for the Spanish slug and discovered that I could filter data by day, radius, and more. This allowed me to find out how many slugs were reported on any given day.</p>
 
+
+For weather data, I checked <a href="https://www.knmi.nl/nederland-nu/klimatologie/maand-en-seizoensoverzichten/2024/mei">KNMI</a> for solid statistics. I also looked at other sites like <a href="https://www.weeronline.nl/nieuws/weeroverzichten-2024-mei">WeerOnline</a> and <a href="https://weerstatistieken.nl/de-bilt/2024/mei">Weerstatistieken</a> to gather more detailed weather information for May 2024.
+
+<img src="https://github.com/user-attachments/assets/787b22aa-2ba9-440e-99d1-b9bbd5ce6660" alt="Internal Data">
+<p>For my internal data, I visited several school gardens to count the number of slugs near the end of September and the start of October. I took pictures of the slugs I found too. I also used <a href="https://github.com/digitalmethodsinitiative/zeeschuimer">Zeeschuimer</a>, to fetch data from social media like Instagram. From pictures, dates, hashtags, etc. Another tool I used was  <a href="https://4cat.nl/">4Cat</a>, where I uploaded my Zeeschuimer data and create filtered datasets.</p>
