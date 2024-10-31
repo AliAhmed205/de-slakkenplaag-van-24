@@ -60,7 +60,7 @@ npm start
 <img width="100" src="https://github.com/user-attachments/assets/eca3dc9d-6db7-4dc8-9464-1ec77a718df8" alt="Author">
 <p>This project was designed and developed by <b>Ali Ahmed</b>. An original <b>© It's by Ali</b></p>
 
-<img src="https://github.com/user-attachments/assets/84cc46ca-6cdb-46dc-a8fd-de34a07035ce" alt="License">
+<img width="100" src="https://github.com/user-attachments/assets/84cc46ca-6cdb-46dc-a8fd-de34a07035ce" alt="License">
 <p>Copyright © 2024 Ali Ahmed</p>
 <p>This project has an MIT license</p>
 
