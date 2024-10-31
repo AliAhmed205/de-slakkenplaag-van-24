@@ -14,3 +14,7 @@
 | Interactive Histogram | Interactive bars (You can hover on) to display the numbers and the posts. |
 | Slug Finding Calendar | An interactive calendar showing daily snail counts. |
 | Interactive Map | An interactive map that allows users to navigate through the days of my personal research. |
+<br>
+<img src="https://github.com/user-attachments/assets/bf747cc3-d724-47d4-a974-8f5192c440bf" alt="External Data">
+<p>All my external data collections come from Waarneming.nl and KNMI. On <a href="https://waarneming.nl/">waarneming.nl</a>, I specifically searched for the Spanish slug and discovered that I could filter data by day, radius, and more. This allowed me to find out how many slugs were reported on any given day.</p>
+
