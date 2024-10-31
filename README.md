@@ -27,5 +27,32 @@ For weather data, I checked <a href="https://www.knmi.nl/nederland-nu/klimatolog
 <img src="https://github.com/user-attachments/assets/787b22aa-2ba9-440e-99d1-b9bbd5ce6660" alt="Internal Data">
 <p>For my internal data, I visited several school gardens to count the number of slugs near the end of September and the start of October. I took pictures of the slugs I found too. I also used <a href="https://github.com/digitalmethodsinitiative/zeeschuimer">Zeeschuimer</a>, to fetch data from social media like Instagram. From pictures, dates, hashtags, etc. Another tool I used was  <a href="https://4cat.nl/">4Cat</a>, where I uploaded my Zeeschuimer data and create filtered datasets.</p>
 
-<img src="https://github.com/user-attachments/assets/caff7704-f8db-4464-8926-11365aac91db" alt="Installation">
+<h1><img src="https://github.com/user-attachments/assets/caff7704-f8db-4464-8926-11365aac91db" alt="Installation"></h1>
+
+
+`⚠ Please make sure you have the latest npm, Git, and Node.js installed before installing the project.`
+
+<img width="200" src="https://github.com/user-attachments/assets/146056c8-bd49-4297-9136-0f1d04bcf442" alt="Clone the repository">
+
+```BASH
+git clone https://github.com/AliAhmed205/de-slakkenplaag-van-24.git
+```
+
+<img width="150" src="https://github.com/user-attachments/assets/e9d995bd-8d57-4eff-94ab-7ccab6d9433a" alt="Change directory">
+
+```BASH
+cd de-slakkenplaag-van-24
+```
+
+<img width="200" src="https://github.com/user-attachments/assets/5abca37b-4e87-49ed-8be8-e7aca5071a84" alt="Install dependencies">
+
+```BASH
+npm install
+```
+
+<img width="150" src="https://github.com/user-attachments/assets/d65b8567-a232-45ed-935f-ab3dc5ba308f" alt="Install the project">
+
+```BASH
+npm start
+```
 
