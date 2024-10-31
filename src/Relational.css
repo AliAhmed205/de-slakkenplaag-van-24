@@ -1,0 +1,51 @@
+.relational-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1;
+  background: linear-gradient(var(--sp-black) 20%, var(--dark-green) 100%);
+}
+
+.relational-container .relation-img {
+  grid-column: 1;
+  grid-row: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.relational-container .relation-img img {
+  width: 100%;
+  animation: float 5s infinite;
+}
+
+.relational-container .relation-img h2 {
+  padding: 2rem 2rem 0 2rem;
+  text-align: center;
+}
+
+.relational-container .relation-about {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 2rem 0 0 0;
+}
+
+.relational-container .relation-about img {
+  padding: 1rem 0;
+  width: 40%;
+}
+
+.relational-container .relation-about p {
+  width: 80%;
+}
+
+.relational-container .relation-about .areachart {
+  width: 90%;
+}

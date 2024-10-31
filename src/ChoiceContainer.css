@@ -1,0 +1,40 @@
+
+.choice-container {
+  background-color: black;
+
+}
+
+.choice-container h1 {
+  color: var(--sp-white);
+  text-shadow: var(--title-color)0 0 10px;
+  font-family: var(--regular-p);
+}
+
+.choice-container .btn-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.choice-container button {
+  background-color: var(--title-color);
+  color: var(--sp-black);
+  padding: .5rem 2rem;
+  font-size: 1rem;
+  margin: 2rem 0;
+  box-shadow: var(--title-color) 0 0 10px;
+  border-radius: 2rem;
+  border: none;
+  transition: .2s ease-in;
+
+  &:hover {
+    background-color: #21340a;
+    color: var(--sp-white);
+    scale: 1.2;
+  }
+}
+
+.choice-container img {
+  width: 10%;
+  margin: 0 auto;
+  filter: drop-shadow(var(--title-color) 0 0 10px);
+}
