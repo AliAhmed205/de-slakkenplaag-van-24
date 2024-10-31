@@ -1,4 +1,4 @@
-<h6>Developed with: HTML, CSS, JS & REACT</h6>
+<h6>Developed with: HTML, CSS, JS & re-developed/migrated to React (See Wiki)</h6>
 <img src="https://github.com/user-attachments/assets/dda18f5b-cd83-44c9-82e1-fc71aff6c2b8" alt="De Slakkenplaag van 24' titel"> 
 
 <p> Welcome to 'De Slakkenplaag van 24'. This year, we’ve seen an unusual number of snails, and we’re here to figure out if it’s really a plague or just a strange coincidence. This website invites you to unravel the mystery through various data visualizations and an interactive map that showcases real-time findings from my, <b>then</b> ongoing research
@@ -31,6 +31,7 @@ For weather data, I checked <a href="https://www.knmi.nl/nederland-nu/klimatolog
 
 
 `⚠ Please make sure you have the latest npm, Git, and Node.js installed before installing the project.`
+`⚠ This website is made for desktop-use only.`
 
 <img width="200" src="https://github.com/user-attachments/assets/146056c8-bd49-4297-9136-0f1d04bcf442" alt="Clone the repository">
 
@@ -55,4 +56,13 @@ npm install
 ```BASH
 npm start
 ```
+<hr>
+<img width="100" src="https://github.com/user-attachments/assets/eca3dc9d-6db7-4dc8-9464-1ec77a718df8" alt="Author">
+<p>This project was designed and developed by <b>Ali Ahmed</b>. An original <b>© It's by Ali</b></p>
+
+<img src="https://github.com/user-attachments/assets/84cc46ca-6cdb-46dc-a8fd-de34a07035ce" alt="License">
+<p>Copyright © 2024 Ali Ahmed</p>
+<p>This project has an MIT license</p>
+
+
 
