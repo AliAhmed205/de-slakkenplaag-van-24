@@ -1,4 +1,4 @@
-<h6>Developed with: HTML, CSS, JS & re-developed/migrated to React (See Wiki)</h6>
+<h6>Developed with: HTML, CSS and JS (+ Own written and collected data through JSON)</h6>
 <img src="https://github.com/user-attachments/assets/dda18f5b-cd83-44c9-82e1-fc71aff6c2b8" alt="De Slakkenplaag van 24' titel"> 
 
 <p> Welcome to 'De Slakkenplaag van 24'. This year, we’ve seen an unusual number of snails, and we’re here to figure out if it’s really a plague or just a strange coincidence. This website invites you to unravel the mystery through various data visualizations and an interactive map that showcases real-time findings from my, <b>then</b> ongoing research
@@ -27,38 +27,16 @@ For weather data, I checked <a href="https://www.knmi.nl/nederland-nu/klimatolog
 <img src="https://github.com/user-attachments/assets/787b22aa-2ba9-440e-99d1-b9bbd5ce6660" alt="Internal Data">
 <p>For my internal data, I visited several school gardens to count the number of slugs near the end of September and the start of October. I took pictures of the slugs I found too. I also used <a href="https://github.com/digitalmethodsinitiative/zeeschuimer">Zeeschuimer</a>, to fetch data from social media like Instagram. From pictures, dates, hashtags, etc. Another tool I used was  <a href="https://4cat.nl/">4Cat</a>, where I uploaded my Zeeschuimer data and create filtered datasets.</p>
 
-<h1><img src="https://github.com/user-attachments/assets/caff7704-f8db-4464-8926-11365aac91db" alt="Installation"></h1>
+<img src="https://github.com/user-attachments/assets/dfdc5da9-9351-45cf-9015-2b858b65c2bf" alt="Wishlist">
 
+<p>This project was actually for school, therefore I was limited to just a number of weeks. If had more time, I would've continued developing the following:</p>
 
-`⚠ Please make sure you have the latest npm, Git, and Node.js installed before installing the project.`
-`⚠ This website is made for desktop-use only.`
+- [ ] Migrating this to a react environment ( `Note: During our fall recess, I was curious to see how long it would take to do this. I eventually did create a fully functional react environment, but the code was too complex for my understanding, so in time, once I my knowledge has increased, I hope to migrate it one day.`)
 
-<img width="200" src="https://github.com/user-attachments/assets/146056c8-bd49-4297-9136-0f1d04bcf442" alt="Clone the repository">
+- [ ] Refacture for a better structure.
+- [ ] Store my data into an actual database.
+- [ ] Allowing more interaction for the user (Like a pop-up log they can fill in during their research)
 
-```BASH
-git clone https://github.com/AliAhmed205/de-slakkenplaag-van-24.git
-```
-
-<img width="150" src="https://github.com/user-attachments/assets/e9d995bd-8d57-4eff-94ab-7ccab6d9433a" alt="Change directory">
-
-```BASH
-cd de-slakkenplaag-van-24
-```
-
-<img width="200" src="https://github.com/user-attachments/assets/5abca37b-4e87-49ed-8be8-e7aca5071a84" alt="Install dependencies">
-
-```BASH
-npm install
-```
-
-<img width="150" src="https://github.com/user-attachments/assets/d65b8567-a232-45ed-935f-ab3dc5ba308f" alt="Install the project">
-
-```BASH
-npm start
-```
-<hr>
-<img width="100" src="https://github.com/user-attachments/assets/eca3dc9d-6db7-4dc8-9464-1ec77a718df8" alt="Author">
-<p>This project was designed and developed by <b>Ali Ahmed</b>. An original <b>© It's by Ali</b></p>
 
 <img width="100" src="https://github.com/user-attachments/assets/84cc46ca-6cdb-46dc-a8fd-de34a07035ce" alt="License">
 <p>Copyright © 2024 Ali Ahmed</p>
